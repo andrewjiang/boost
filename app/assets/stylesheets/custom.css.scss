@@ -141,7 +141,7 @@
 		padding: 20px 0px;
 		margin-top:0px;
 		font-size: 16px;
-	} 
+	}
 	#footer{
 		color: #eee;
 		margin-left: 0px;
@@ -193,16 +193,16 @@
 		opacity: 0;
 	    background-color: black;
 	    position: absolute;
-	    left: 0; 
-	    top: 0; 
-	    height: 100%; 
+	    left: 0;
+	    top: 0;
+	    height: 100%;
 	    width: 100%;
 	}
 	#landing-hero {
 		padding: 120px 20px;
 	}
 	#landing-image{
-		background-image:url('/assets/car4.png');
+		background-image: image-url('car4.png');
 		background-repeat: no-repeat;
 		background-size: 100%;
 		background-position: 0px -150px;
@@ -483,24 +483,24 @@
 	}
 	.divider-inside-top-bottom {
 	  position:relative;
-	  overflow:hidden; 
+	  overflow:hidden;
 	}
 	.divider-inside-top-bottom:before {
-	  content: ""; 
-	  position:absolute; 
-	  z-index: 1; 
-	  width:96%;  
-	  top: -10px; 
-	  height: 10px; 
-	  left: 2%; 
-	  border-radius: 100px / 5px; 
-	  box-shadow:0 0 18px rgba(0,0,0,0.8); 
+	  content: "";
+	  position:absolute;
+	  z-index: 1;
+	  width:96%;
+	  top: -10px;
+	  height: 10px;
+	  left: 2%;
+	  border-radius: 100px / 5px;
+	  box-shadow:0 0 18px rgba(0,0,0,0.8);
 	}
 	.divider-inside-top-bottom:after {
 	  content: "";
 	  position:absolute;
 	  z-index: 1;
-	  width:96%; 
+	  width:96%;
 	  bottom: -10px;
 	  height: 5px;
 	  left: 2%;
@@ -509,19 +509,19 @@
 	}
 	.divider-inside-top {
 	  position:relative;
-	  overflow:hidden; 
-	  border-top:1px solid #ddd; 
+	  overflow:hidden;
+	  border-top:1px solid #ddd;
 	}
 	.divider-inside-top:before {
-	  content: ""; 
-	  position:absolute; 
-	  z-index: 1; 
-	  width:96%;  
-	  top: -10px; 
-	  height: 10px; 
-	  left: 2%; 
-	  border-radius: 100px / 5px; 
-	  box-shadow:0 0 18px rgba(0,0,0,0.6); 
+	  content: "";
+	  position:absolute;
+	  z-index: 1;
+	  width:96%;
+	  top: -10px;
+	  height: 10px;
+	  left: 2%;
+	  border-radius: 100px / 5px;
+	  box-shadow:0 0 18px rgba(0,0,0,0.6);
 	}
 	@media (max-width: 1440px){
 		#landing-image{

@@ -9,4 +9,18 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Zephyr::Application.config.secret_key_base = 'b0e50683d47d10290f0d3ab03d90bdb53c3fdce57556cc7d85170d0c0670366804c07512e8b9dbdb8ba9908ed879e0791c98c87ce0ff8acd27de434ad23616fe'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+Zephyr::Application.config.secret_key_base = secure_token

@@ -1,0 +1,73 @@
+<div class="container-fluid" id="list-top-drivers">
+  <div class="container">
+    <center>
+      <h1>Start driving with Zephyr</h1>
+      <h5>Fill out the drivers application, and Zephyr will reach out to you within 24 hours to get you started</h5>
+    </center>
+
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="container" id="drivers-form" role="main" >
+    <%= form_for(@driver_application) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+
+      <%= f.label :facebook_link %>
+      <%= f.text_field :facebook_link %>
+
+      <%= f.label :phone_number %>
+      <%= f.telephone_field :phone_number %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+
+      <%= f.label :zip_code %>
+      <%= f.text_field :zip_code %>
+
+      <%= f.label "What days would you like to drive?" %>
+      <%= f.check_box :day_pref_sun %>
+      <%= f.label :day_pref_sun, "Sun" %>
+      <%= f.check_box :day_pref_mon %>
+      <%= f.label :day_pref_mon, "Mon" %>
+      <%= f.check_box :day_pref_tue %>
+      <%= f.label :day_pref_tue, "Tue" %>
+      <%= f.check_box :day_pref_wed %>
+      <%= f.label :day_pref_wed, "Wed" %>
+      <%= f.check_box :day_pref_thu %>
+      <%= f.label :day_pref_thu, "Thu" %>
+      <%= f.check_box :day_pref_fri %>
+      <%= f.label :day_pref_fri, "Fri" %>
+      <%= f.check_box :day_pref_sat %>
+      <%= f.label :day_pref_sat, "Sat" %>
+
+      <%= f.label "How would you park at home?" %>
+      <%= f.check_box :park_pref_garage %>
+      <%= f.label :park_pref_garage, "Garage" %>
+      <%= f.check_box :park_pref_driveway %>
+      <%= f.label :park_pref_driveway, "Driveway" %>
+      <%= f.check_box :park_pref_street %>
+      <%= f.label :park_pref_street, "Street" %>
+
+      <%= f.submit "Submit", class: "btn btn-larg btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46837517-1', 'meteor.com');
+  ga('send', 'pageview');
+
+</script>

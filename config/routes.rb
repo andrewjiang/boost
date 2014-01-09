@@ -1,8 +1,11 @@
 Zephyr::Application.routes.draw do
 
+  resources :car_listings,        only: [:new, :create, :destroy]
+  resources :driver_applications, only: [:new, :create, :destroy]
+
   root 'home#index'
-  match '/list',  to: 'home#list',  via: 'get'
-  match '/drive', to: 'home#drive', via: 'get'
+  match '/list',  to: 'car_listings#new',        via: 'get'
+  match '/drive', to: 'driver_applications#new', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

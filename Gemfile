@@ -5,6 +5,7 @@ gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '3.0.3.0'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

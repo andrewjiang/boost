@@ -36,6 +36,8 @@ class DriverApplicationsController < ApplicationController
           :day_pref_sat,
           :park_pref_garage,
           :park_pref_driveway,
-          :park_pref_street)
+          :park_pref_street,
+          :resume,
+          :drivers_license)
     end
 end

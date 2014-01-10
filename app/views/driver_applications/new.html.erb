@@ -12,52 +12,80 @@
     <%= form_for(@driver_application) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
+      <div class="form-group">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control" %>
+      </div>
 
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
+      <div class="form-group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control" %>
+      </div>
 
-      <%= f.label :facebook_link %>
-      <%= f.text_field :facebook_link %>
+      <div class="form-group">
+        <%= f.label :facebook_link %>
+        <%= f.text_field :facebook_link, class: "form-control" %>
+      </div>
 
-      <%= f.label :phone_number %>
-      <%= f.telephone_field :phone_number %>
+      <div class="form-group">
+        <%= f.label :phone_number %>
+        <%= f.telephone_field :phone_number, class: "form-control" %>
+      </div>
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
 
-      <%= f.label :address %>
-      <%= f.text_field :address %>
+      <div class="form-group">
+        <%= f.label :address %>
+        <%= f.text_field :address, class: "form-control" %>
+      </div>
 
-      <%= f.label :zip_code %>
-      <%= f.text_field :zip_code %>
+      <div class="form-group">
+        <%= f.label :zip_code %>
+        <%= f.text_field :zip_code, class: "form-control" %>
+      </div>
 
-      <%= f.label "What days would you like to drive?" %>
-      <%= f.check_box :day_pref_sun %>
-      <%= f.label :day_pref_sun, "Sun" %>
-      <%= f.check_box :day_pref_mon %>
-      <%= f.label :day_pref_mon, "Mon" %>
-      <%= f.check_box :day_pref_tue %>
-      <%= f.label :day_pref_tue, "Tue" %>
-      <%= f.check_box :day_pref_wed %>
-      <%= f.label :day_pref_wed, "Wed" %>
-      <%= f.check_box :day_pref_thu %>
-      <%= f.label :day_pref_thu, "Thu" %>
-      <%= f.check_box :day_pref_fri %>
-      <%= f.label :day_pref_fri, "Fri" %>
-      <%= f.check_box :day_pref_sat %>
-      <%= f.label :day_pref_sat, "Sat" %>
+      <div class="form-group">
+        <%= f.label "What days would you like to drive?" %>
+        <%= f.check_box :day_pref_sun %>
+        <%= f.label :day_pref_sun, "Sun" %>
+        <%= f.check_box :day_pref_mon %>
+        <%= f.label :day_pref_mon, "Mon" %>
+        <%= f.check_box :day_pref_tue %>
+        <%= f.label :day_pref_tue, "Tue" %>
+        <%= f.check_box :day_pref_wed %>
+        <%= f.label :day_pref_wed, "Wed" %>
+        <%= f.check_box :day_pref_thu %>
+        <%= f.label :day_pref_thu, "Thu" %>
+        <%= f.check_box :day_pref_fri %>
+        <%= f.label :day_pref_fri, "Fri" %>
+        <%= f.check_box :day_pref_sat %>
+        <%= f.label :day_pref_sat, "Sat" %>
+      </div>
 
-      <%= f.label "How would you park at home?" %>
-      <%= f.check_box :park_pref_garage %>
-      <%= f.label :park_pref_garage, "Garage" %>
-      <%= f.check_box :park_pref_driveway %>
-      <%= f.label :park_pref_driveway, "Driveway" %>
-      <%= f.check_box :park_pref_street %>
-      <%= f.label :park_pref_street, "Street" %>
+      <div class="form-group">
+        <%= f.label "How would you park at home?" %>
+        <%= f.check_box :park_pref_garage %>
+        <%= f.label :park_pref_garage, "Garage" %>
+        <%= f.check_box :park_pref_driveway %>
+        <%= f.label :park_pref_driveway, "Driveway" %>
+        <%= f.check_box :park_pref_street %>
+        <%= f.label :park_pref_street, "Street" %>
+      </div>
 
-      <%= f.submit "Submit", class: "btn btn-larg btn-primary" %>
+      <div class="form-group">
+        <%= f.label "Resume" %>
+        <%= f.file_field :resume %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label "Photo of Driver's License" %>
+        <%= f.file_field :drivers_license %>
+      </div>
+
+        <%= f.submit "Submit", class: "btn btn-larg btn-primary" %>
     <% end %>
   </div>
 </div>

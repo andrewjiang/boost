@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140109075359) do
+ActiveRecord::Schema.define(version: 20140110060542) do
 
   create_table "driver_applications", force: true do |t|
     t.string   "first_name"
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(version: 20140109075359) do
     t.boolean  "park_pref_street"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "resume_file_name"
+    t.string   "resume_content_type"
+    t.integer  "resume_file_size"
+    t.datetime "resume_updated_at"
+    t.string   "drivers_license_file_name"
+    t.string   "drivers_license_content_type"
+    t.integer  "drivers_license_file_size"
+    t.datetime "drivers_license_updated_at"
   end
 
 end

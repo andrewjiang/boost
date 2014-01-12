@@ -10,41 +10,61 @@
 <div class="container-fluid">
   <div class="container" id="drivers-form" role="main" >
     <%= form_for(@driver_application) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-
+    
       <div class="form-group">
         <%= f.label :first_name %>
         <%= f.text_field :first_name, class: "form-control" %>
+        <% if f.object.errors.include?(:first_name) %>
+          <%= f.label :first_name, f.object.errors.full_messages_for(:first_name).first, class: "error" %>
+        <% end %>
       </div>
 
       <div class="form-group">
         <%= f.label :last_name %>
         <%= f.text_field :last_name, class: "form-control" %>
+        <% if f.object.errors.include?(:last_name) %>
+          <%= f.label :last_name, f.object.errors.full_messages_for(:last_name).first, class: "error" %>
+        <% end %>
       </div>
 
       <div class="form-group">
         <%= f.label :facebook_link %>
         <%= f.text_field :facebook_link, class: "form-control" %>
+        <% if f.object.errors.include?(:facebook_link) %>
+          <%= f.label :facebook_link, f.object.errors.full_messages_for(:facebook_link).first, class: "error" %>
+        <% end %>
       </div>
 
       <div class="form-group">
         <%= f.label :phone_number %>
         <%= f.telephone_field :phone_number, class: "form-control" %>
+        <% if f.object.errors.include?(:phone_number) %>
+          <%= f.label :phone_number, f.object.errors.full_messages_for(:phone_number).first, class: "error" %>
+        <% end %>
       </div>
 
       <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, class: "form-control" %>
+        <% if f.object.errors.include?(:email) %>
+          <%= f.label :email, f.object.errors.full_messages_for(:email).first, class: "error" %>
+        <% end %>
       </div>
 
       <div class="form-group">
         <%= f.label :address %>
         <%= f.text_field :address, class: "form-control" %>
+        <% if f.object.errors.include?(:address) %>
+          <%= f.label :address, f.object.errors.full_messages_for(:address).first, class: "error" %>
+        <% end %>
       </div>
 
       <div class="form-group">
         <%= f.label :zip_code %>
         <%= f.text_field :zip_code, class: "form-control" %>
+        <% if f.object.errors.include?(:zip_code) %>
+          <%= f.label :zip_code, f.object.errors.full_messages_for(:zip_code).first, class: "error" %>
+        <% end %>
       </div>
 
       <div class="form-group">
@@ -78,11 +98,17 @@
       <div class="form-group">
         <%= f.label "Resume" %>
         <%= f.file_field :resume %>
+        <% if f.object.errors.include?(:resume) %>
+          <%= f.label :resume, f.object.errors.full_messages_for(:resume).first, class: "error" %>
+        <% end %>
       </div>
 
       <div class="form-group">
         <%= f.label "Photo of Driver's License" %>
         <%= f.file_field :drivers_license %>
+        <% if f.object.errors.include?(:drivers_license) %>
+          <%= f.label :drivers_license, f.object.errors.full_messages_for(:drivers_license).first, class: "error" %>
+        <% end %>
       </div>
 
         <%= f.submit "Submit", class: "btn btn-larg btn-primary" %>

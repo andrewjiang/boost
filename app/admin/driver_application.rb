@@ -1,4 +1,10 @@
 ActiveAdmin.register DriverApplication do
+  controller do
+    def permitted_params
+      params.permit!
+    end
+  end
+
   show do |driver_application|
     attributes_table do
       row :id

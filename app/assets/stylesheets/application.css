@@ -37,3 +37,10 @@
 		width: 100%;
 		border-radius: 2px;
 	}
+
+	.application-row label.control-label{
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-size: 16px;
+		font-weight: 300;
+		color: #14679B;
+	}

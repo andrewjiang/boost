@@ -216,6 +216,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer (= 4.0.2)
   activeadmin!
   aws-sdk
   bootstrap-sass (= 3.0.3.0)

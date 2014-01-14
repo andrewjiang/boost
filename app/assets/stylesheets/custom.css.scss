@@ -599,8 +599,38 @@
 
 /* Driver Application */
 
-	#drivers-form{
+	
+ 	#drivers-form{
 		padding: 20px;
+	}
+
+	.application-file{
+		padding-top: 10px;
+	}
+
+	.application-row{
+		margin-bottom: 10px;
+		min-height: 40px;
+	}
+
+	.application-row input.form-control{
+		height: 40px;
+	}
+
+	.application-submit{
+		margin: 30px 0px;
+	}
+
+	.application-submit .btn{
+		width: 100%;
+		border-radius: 2px;
+	}
+
+	.application-row label.control-label{
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-size: 16px;
+		font-weight: 300;
+		color: #14679B;
 	}
 
 /* End Driver Application */

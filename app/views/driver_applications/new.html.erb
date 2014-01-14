@@ -10,144 +10,153 @@
 <div class="container-fluid">
   <div class="container" id="drivers-form" role="main" >
     <%= form_for(@driver_application, html: { class: "form-horizontal" } ) do |f| %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="row application-row">
+            <div class="col-md-12">
+              <%= f.label :name, class: "control-label" %>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <%= f.text_field :first_name, class: "form-control", placeholder: "First" %>
+                  <% if f.object.errors.include?(:first_name) %>
+                    <%= f.label :first_name, f.object.errors.full_messages_for(:first_name).first, class: "error" %>
+                  <% end %>
+                </div>
+                <div class="col-md-6">
+                  <%= f.text_field :last_name, class: "form-control", placeholder: "Last" %>
+                  <% if f.object.errors.include?(:last_name) %>
+                    <%= f.label :last_name, f.object.errors.full_messages_for(:last_name).first, class: "error" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <div class="form-group">
-        <%= f.label :first_name, class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
-          <%= f.text_field :first_name, class: "form-control" %>
-          <% if f.object.errors.include?(:first_name) %>
-            <%= f.label :first_name, f.object.errors.full_messages_for(:first_name).first, class: "error" %>
-          <% end %>
+          <div class="row application-row">
+            <div class="col-md-12">
+              <%= f.label :phone, class: "control-label" %>
+            </div>
+            <div class="col-md-12">
+              <%= f.telephone_field :phone_number, class: "form-control", placeholder: "555-555-5555" %>
+              <% if f.object.errors.include?(:phone_number) %>
+                <%= f.label :phone_number, f.object.errors.full_messages_for(:phone_number).first, class: "error" %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row application-row">
+            <div class="col-md-12">
+              <%= f.label :email, class: "control-label" %>
+            </div>
+            <div class="col-md-12">
+              <%= f.email_field :email, class: "form-control", placeholder: "wile.e.coyote@acme.com" %>
+              <% if f.object.errors.include?(:email) %>
+                <%= f.label :email, f.object.errors.full_messages_for(:email).first, class: "error" %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row application-row">
+            <div class="col-md-9">
+              <%= f.label :address, class: "control-label" %>
+              <%= f.text_field :address, class: "form-control", placeholder: "123 Main Street, Springfield, IL" %>
+              <% if f.object.errors.include?(:address) %>
+                <%= f.label :address, f.object.errors.full_messages_for(:address).first, class: "error" %>
+              <% end %>
+            </div>
+            <div class="col-md-3">
+              <%= f.label :zip, class: "control-label" %>
+              <%= f.text_field :zip_code, class: "form-control", placeholder: "12345" %>
+              <% if f.object.errors.include?(:zip_code) %>
+                <%= f.label :zip_code, f.object.errors.full_messages_for(:zip_code).first, class: "error" %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row application-row">
+            <div class="col-md-12">
+              <%= f.label :facebook_link, class: "control-label" %>
+            </div>
+            <div class="col-md-12">
+              <%= f.text_field :facebook_link, class: "form-control", placeholder: "www.facebook.com/wileecoyote" %>
+              <% if f.object.errors.include?(:facebook_link) %>
+                <%= f.label :facebook_link, f.object.errors.full_messages_for(:facebook_link).first, class: "error" %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row application-row">
+            <div class="col-md-12">
+              <%= f.label :What_days_would_you_like_to_drive?, class: "control-label" %>
+            </div>
+            <div class="col-md-12">
+              <%= f.label(:day_pref_sun, class: "checkbox-inline" ) do %>
+                <%= f.check_box :day_pref_sun %> Sun
+              <% end %>
+              <%= f.label(:day_pref_mon, class: "checkbox-inline" ) do %>
+                <%= f.check_box :day_pref_mon %> Mon
+              <% end %>
+              <%= f.label(:day_pref_tue, class: "checkbox-inline" ) do %>
+                <%= f.check_box :day_pref_tue %> Tue
+              <% end %>
+              <%= f.label(:day_pref_wed, class: "checkbox-inline" ) do %>
+                <%= f.check_box :day_pref_wed %> Wed
+              <% end %>
+              <%= f.label(:day_pref_thu, class: "checkbox-inline" ) do %>
+                <%= f.check_box :day_pref_thu %> Thu
+              <% end %>
+              <%= f.label(:day_pref_fri, class: "checkbox-inline" ) do %>
+                <%= f.check_box :day_pref_fri %> Fri
+              <% end %>
+              <%= f.label(:day_pref_sat, class: "checkbox-inline" ) do %>
+                <%= f.check_box :day_pref_sat %> Sat
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row application-row">
+            <div class="col-md-12">
+              <%= f.label "How would you park at home?", class: "control-label" %>
+            </div>
+            <div class="col-md-12">
+              <%= f.label(:park_pref_garage, class: "checkbox-inline" ) do %>
+                <%= f.check_box :park_pref_garage %> Garage
+              <% end %>
+              <%= f.label(:park_pref_driveway, class: "checkbox-inline" ) do %>
+                <%= f.check_box :park_pref_driveway %> Driveway
+              <% end %>
+              <%= f.label(:park_pref_street, class: "checkbox-inline" ) do %>
+                <%= f.check_box :park_pref_street %> Street
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row application-row">
+            <div class="col-md-6">
+              <%= f.label "Resume", class: "control-label" %>
+              <%= f.file_field :resume, class: "application-file" %>
+              <% if f.object.errors.include?(:resume) %>
+                <%= f.label :resume, f.object.errors.full_messages_for(:resume).first, class: "error" %>
+              <% end %>
+            </div>
+            <div class="col-md-6">
+              <%= f.label "Photo of Driver's License", class: "control-label" %>
+              <%= f.file_field :drivers_license, class: "application-file"  %>
+              <% if f.object.errors.include?(:drivers_license) %>
+                <%= f.label :drivers_license, f.object.errors.full_messages_for(:drivers_license).first, class: "error" %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row application-submit">
+            <div class="col-sm-12">
+              <%= f.submit "SUBMIT", class: "btn btn-lg btn-info" %>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="form-group">
-        <%= f.label :last_name, class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
-          <%= f.text_field :last_name, class: "form-control" %>
-          <% if f.object.errors.include?(:last_name) %>
-            <%= f.label :last_name, f.object.errors.full_messages_for(:last_name).first, class: "error" %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :facebook_link, class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
-          <%= f.text_field :facebook_link, class: "form-control" %>
-          <% if f.object.errors.include?(:facebook_link) %>
-            <%= f.label :facebook_link, f.object.errors.full_messages_for(:facebook_link).first, class: "error" %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :phone_number, class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
-          <%= f.telephone_field :phone_number, class: "form-control" %>
-          <% if f.object.errors.include?(:phone_number) %>
-            <%= f.label :phone_number, f.object.errors.full_messages_for(:phone_number).first, class: "error" %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :email, class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
-          <%= f.email_field :email, class: "form-control" %>
-          <% if f.object.errors.include?(:email) %>
-            <%= f.label :email, f.object.errors.full_messages_for(:email).first, class: "error" %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :address, class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
-          <%= f.text_field :address, class: "form-control" %>
-          <% if f.object.errors.include?(:address) %>
-            <%= f.label :address, f.object.errors.full_messages_for(:address).first, class: "error" %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :zip_code, class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
-          <%= f.text_field :zip_code, class: "form-control" %>
-          <% if f.object.errors.include?(:zip_code) %>
-            <%= f.label :zip_code, f.object.errors.full_messages_for(:zip_code).first, class: "error" %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label "What days would you like to drive?", class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
-          <%= f.label(:day_pref_sun, class: "checkbox-inline" ) do %>
-            <%= f.check_box :day_pref_sun %> Sun
-          <% end %>
-          <%= f.label(:day_pref_mon, class: "checkbox-inline" ) do %>
-            <%= f.check_box :day_pref_mon %> Mon
-          <% end %>
-          <%= f.label(:day_pref_tue, class: "checkbox-inline" ) do %>
-            <%= f.check_box :day_pref_tue %> Tue
-          <% end %>
-          <%= f.label(:day_pref_wed, class: "checkbox-inline" ) do %>
-            <%= f.check_box :day_pref_wed %> Wed
-          <% end %>
-          <%= f.label(:day_pref_thu, class: "checkbox-inline" ) do %>
-            <%= f.check_box :day_pref_thu %> Thu
-          <% end %>
-          <%= f.label(:day_pref_fri, class: "checkbox-inline" ) do %>
-            <%= f.check_box :day_pref_fri %> Fri
-          <% end %>
-          <%= f.label(:day_pref_sat, class: "checkbox-inline" ) do %>
-            <%= f.check_box :day_pref_sat %> Sat
-          <% end %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label "How would you park at home?", class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
-          <%= f.label(:park_pref_garage, class: "checkbox-inline" ) do %>
-            <%= f.check_box :park_pref_garage %> Garage
-          <% end %>
-          <%= f.label(:park_pref_driveway, class: "checkbox-inline" ) do %>
-            <%= f.check_box :park_pref_driveway %> Driveway
-          <% end %>
-          <%= f.label(:park_pref_street, class: "checkbox-inline" ) do %>
-            <%= f.check_box :park_pref_street %> Street
-          <% end %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label "Resume", class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
-          <%= f.file_field :resume %>
-          <% if f.object.errors.include?(:resume) %>
-            <%= f.label :resume, f.object.errors.full_messages_for(:resume).first, class: "error" %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label "Photo of Driver's License", class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
-          <%= f.file_field :drivers_license %>
-          <% if f.object.errors.include?(:drivers_license) %>
-            <%= f.label :drivers_license, f.object.errors.full_messages_for(:drivers_license).first, class: "error" %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-12">
-          <%= f.submit "Submit", class: "btn btn-larg btn-primary" %>
-        </div>
-      </div>
     <% end %>
   </div>
 </div>

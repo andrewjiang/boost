@@ -19,4 +19,7 @@ class DriverApplication < ActiveRecord::Base
   validates_attachment_presence :drivers_license
   validates_attachment_size :drivers_license, :less_than => 4.megabytes,
                             :unless => Proc.new {|m| m[:drivers_license].nil?}
+
+  validates :drive_days_per_week, presence: true
+  validates :parking_pref, presence: true
 end

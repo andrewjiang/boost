@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140111044834) do
+ActiveRecord::Schema.define(version: 20140115062935) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -54,16 +54,6 @@ ActiveRecord::Schema.define(version: 20140111044834) do
     t.string   "email"
     t.string   "address"
     t.string   "zip_code"
-    t.boolean  "day_pref_sun"
-    t.boolean  "day_pref_mon"
-    t.boolean  "day_pref_tue"
-    t.boolean  "day_pref_wed"
-    t.boolean  "day_pref_thu"
-    t.boolean  "day_pref_fri"
-    t.boolean  "day_pref_sat"
-    t.boolean  "park_pref_garage"
-    t.boolean  "park_pref_driveway"
-    t.boolean  "park_pref_street"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "resume_file_name"
@@ -74,6 +64,8 @@ ActiveRecord::Schema.define(version: 20140111044834) do
     t.string   "drivers_license_content_type"
     t.integer  "drivers_license_file_size"
     t.datetime "drivers_license_updated_at"
+    t.integer  "drive_days_per_week"
+    t.string   "parking_pref"
   end
 
   create_table "users", force: true do |t|

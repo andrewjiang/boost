@@ -15,18 +15,18 @@
           <div class="row application-row">
             <div class="col-md-12">
               <%= f.label :name, class: "control-label" %>
-              
+
               <div class="row">
                 <div class="col-md-6">
                   <%= f.text_field :first_name, class: "form-control", placeholder: "First" %>
                   <% if f.object.errors.include?(:first_name) %>
-                    <%= f.label :first_name, f.object.errors.full_messages_for(:first_name).first, class: "error" %>
+                    <%= f.label :first_name, "First name is required", class: "error" %>
                   <% end %>
                 </div>
                 <div class="col-md-6">
                   <%= f.text_field :last_name, class: "form-control", placeholder: "Last" %>
                   <% if f.object.errors.include?(:last_name) %>
-                    <%= f.label :last_name, f.object.errors.full_messages_for(:last_name).first, class: "error" %>
+                    <%= f.label :last_name, "Last name is required", class: "error" %>
                   <% end %>
                 </div>
               </div>
@@ -40,7 +40,7 @@
             <div class="col-md-12">
               <%= f.telephone_field :phone_number, class: "form-control", placeholder: "555-555-5555" %>
               <% if f.object.errors.include?(:phone_number) %>
-                <%= f.label :phone_number, f.object.errors.full_messages_for(:phone_number).first, class: "error" %>
+                <%= f.label :phone_number, "A phone number is required", class: "error" %>
               <% end %>
             </div>
           </div>
@@ -52,7 +52,7 @@
             <div class="col-md-12">
               <%= f.email_field :email, class: "form-control", placeholder: "wile.e.coyote@acme.com" %>
               <% if f.object.errors.include?(:email) %>
-                <%= f.label :email, f.object.errors.full_messages_for(:email).first, class: "error" %>
+                <%= f.label :email, "An email is required", class: "error" %>
               <% end %>
             </div>
           </div>
@@ -62,14 +62,14 @@
               <%= f.label :address, class: "control-label" %>
               <%= f.text_field :address, class: "form-control", placeholder: "123 Main Street, Springfield, IL" %>
               <% if f.object.errors.include?(:address) %>
-                <%= f.label :address, f.object.errors.full_messages_for(:address).first, class: "error" %>
+                <%= f.label :address, "A current address is required", class: "error" %>
               <% end %>
             </div>
             <div class="col-md-3">
               <%= f.label :zip, class: "control-label" %>
               <%= f.text_field :zip_code, class: "form-control", placeholder: "12345" %>
               <% if f.object.errors.include?(:zip_code) %>
-                <%= f.label :zip_code, f.object.errors.full_messages_for(:zip_code).first, class: "error" %>
+                <%= f.label :zip_code, "A zip code is required", class: "error" %>
               <% end %>
             </div>
           </div>
@@ -81,36 +81,19 @@
             <div class="col-md-12">
               <%= f.text_field :facebook_link, class: "form-control", placeholder: "www.facebook.com/wileecoyote" %>
               <% if f.object.errors.include?(:facebook_link) %>
-                <%= f.label :facebook_link, f.object.errors.full_messages_for(:facebook_link).first, class: "error" %>
+                <%= f.label :facebook_link, "Please enter a link to your Facebook profile page", class: "error" %>
               <% end %>
             </div>
           </div>
 
           <div class="row application-row">
             <div class="col-md-12">
-              <%= f.label :What_days_would_you_like_to_drive?, class: "control-label" %>
+              <%= f.label :How_many_days_per_week_would_you_like_to_drive?, class: "control-label" %>
             </div>
             <div class="col-md-12">
-              <%= f.label(:day_pref_sun, class: "checkbox-inline" ) do %>
-                <%= f.check_box :day_pref_sun %> Sun
-              <% end %>
-              <%= f.label(:day_pref_mon, class: "checkbox-inline" ) do %>
-                <%= f.check_box :day_pref_mon %> Mon
-              <% end %>
-              <%= f.label(:day_pref_tue, class: "checkbox-inline" ) do %>
-                <%= f.check_box :day_pref_tue %> Tue
-              <% end %>
-              <%= f.label(:day_pref_wed, class: "checkbox-inline" ) do %>
-                <%= f.check_box :day_pref_wed %> Wed
-              <% end %>
-              <%= f.label(:day_pref_thu, class: "checkbox-inline" ) do %>
-                <%= f.check_box :day_pref_thu %> Thu
-              <% end %>
-              <%= f.label(:day_pref_fri, class: "checkbox-inline" ) do %>
-                <%= f.check_box :day_pref_fri %> Fri
-              <% end %>
-              <%= f.label(:day_pref_sat, class: "checkbox-inline" ) do %>
-                <%= f.check_box :day_pref_sat %> Sat
+              <%= f.select :drive_days_per_week, options_for_select([1, 2, 3, 4, 5, 6, 7]), {:prompt => ""}, {class: "form-control"} %>
+              <% if f.object.errors.include?(:drive_days_per_week) %>
+                <%= f.label :drive_days_per_week, "Please select a value", class: "error" %>
               <% end %>
             </div>
           </div>
@@ -120,14 +103,9 @@
               <%= f.label "How would you park at home?", class: "control-label" %>
             </div>
             <div class="col-md-12">
-              <%= f.label(:park_pref_garage, class: "checkbox-inline" ) do %>
-                <%= f.check_box :park_pref_garage %> Garage
-              <% end %>
-              <%= f.label(:park_pref_driveway, class: "checkbox-inline" ) do %>
-                <%= f.check_box :park_pref_driveway %> Driveway
-              <% end %>
-              <%= f.label(:park_pref_street, class: "checkbox-inline" ) do %>
-                <%= f.check_box :park_pref_street %> Street
+              <%= f.select :parking_pref, options_for_select(["Garage", "Driveway", "Street"]), {:prompt => ""}, {class: "form-control"} %>
+              <% if f.object.errors.include?(:parking_pref) %>
+                <%= f.label :parking_pref, "Please select or enter a value", class: "error" %>
               <% end %>
             </div>
           </div>
@@ -137,14 +115,14 @@
               <%= f.label "Resume", class: "control-label" %>
               <%= f.file_field :resume, class: "application-file" %>
               <% if f.object.errors.include?(:resume) %>
-                <%= f.label :resume, f.object.errors.full_messages_for(:resume).first, class: "error" %>
+                <%= f.label :resume, "Please upload your resume", class: "error" %>
               <% end %>
             </div>
             <div class="col-md-6">
               <%= f.label "Photo of Driver's License", class: "control-label" %>
               <%= f.file_field :drivers_license, class: "application-file"  %>
               <% if f.object.errors.include?(:drivers_license) %>
-                <%= f.label :drivers_license, f.object.errors.full_messages_for(:drivers_license).first, class: "error" %>
+                <%= f.label :drivers_license, "Please upload a photo", class: "error" %>
               <% end %>
             </div>
           </div>

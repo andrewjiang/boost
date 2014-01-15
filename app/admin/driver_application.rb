@@ -15,17 +15,8 @@ ActiveAdmin.register DriverApplication do
       row :email
       row :address
       row :zip_code
-      row :day_pref_sun
-      row :day_pref_mon
-      row :day_pref_tue
-      row :day_pref_wed
-      row :day_pref_thu
-      row :day_pref_fri
-      row :day_pref_sat
-      row :park_pref_garage
-      row :park_pref_driveway
-      row :park_pref_street
-      row :created_at
+      row :drive_days_per_week
+      row :parking_pref
       row :updated_at
       row :resume do
         link_to driver_application.resume_file_name, driver_application.resume.url

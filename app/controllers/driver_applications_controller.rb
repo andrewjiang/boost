@@ -19,7 +19,7 @@ class DriverApplicationsController < ApplicationController
   private
 
     def driver_application_params
-      params.require(:driver_application) .permit(
+      params.require(:driver_application).permit(
           :first_name,
           :last_name,
           :facebook_link,
@@ -27,16 +27,8 @@ class DriverApplicationsController < ApplicationController
           :email,
           :address,
           :zip_code,
-          :day_pref_sun,
-          :day_pref_mon,
-          :day_pref_tue,
-          :day_pref_wed,
-          :day_pref_thu,
-          :day_pref_fri,
-          :day_pref_sat,
-          :park_pref_garage,
-          :park_pref_driveway,
-          :park_pref_street,
+          :drive_days_per_week,
+          :parking_pref,
           :resume,
           :drivers_license)
     end

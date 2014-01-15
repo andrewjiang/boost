@@ -14,7 +14,7 @@
         <div class="col-md-6 col-md-offset-3">
           <div class="row application-row">
             <div class="col-md-12">
-              <%= f.label :name, class: "control-label" %>
+              <%= f.label :first_name, "Name", class: "control-label" %>
 
               <div class="row">
                 <div class="col-md-6">
@@ -35,7 +35,7 @@
 
           <div class="row application-row">
             <div class="col-md-12">
-              <%= f.label :phone, class: "control-label" %>
+              <%= f.label :phone_number, "Phone", class: "control-label" %>
             </div>
             <div class="col-md-12">
               <%= f.telephone_field :phone_number, class: "form-control", placeholder: "555-555-5555" %>
@@ -88,7 +88,7 @@
 
           <div class="row application-row">
             <div class="col-md-12">
-              <%= f.label :How_many_days_per_week_would_you_like_to_drive?, class: "control-label" %>
+              <%= f.label :drive_days_per_week, "How many days per week would you like to drive?", class: "control-label" %>
             </div>
             <div class="col-md-12">
               <%= f.select :drive_days_per_week, options_for_select([["", nil], 1, 2, 3, 4, 5, 6, 7]), {}, {class: "form-control"} %>
@@ -100,7 +100,7 @@
 
           <div class="row application-row">
             <div class="col-md-12">
-              <%= f.label "How would you park at home?", class: "control-label" %>
+              <%= f.label :parking_pref, "How would you park at home?", class: "control-label" %>
             </div>
             <div class="col-md-12">
               <%= f.select :parking_pref, options_for_select([["", nil], "Garage", "Driveway", "Street"]), {}, {class: "form-control"} %>
@@ -112,14 +112,14 @@
 
           <div class="row application-row">
             <div class="col-md-6">
-              <%= f.label "Resume", class: "control-label" %>
+              <%= f.label :resume, "Resume", class: "control-label" %>
               <%= f.file_field :resume, class: "application-file" %>
               <% if f.object.errors.include?(:resume) %>
                 <%= f.label :resume, "Please upload your resume", class: "error" %>
               <% end %>
             </div>
             <div class="col-md-6">
-              <%= f.label "Photo of Driver's License", class: "control-label" %>
+              <%= f.label :drivers_license, "Photo of Driver's License", class: "control-label" %>
               <%= f.file_field :drivers_license, class: "application-file"  %>
               <% if f.object.errors.include?(:drivers_license) %>
                 <%= f.label :drivers_license, "Please upload a photo", class: "error" %>
@@ -129,7 +129,7 @@
 
           <div class="row application-row">
             <div class="col-md-12">
-              <%= f.label "How'd you hear about us?", class: "control-label" %>
+              <%= f.label "How'd you hear about us?", for: "select_referred_by", class: "control-label" %>
             </div>
             <div class="col-md-12">
               <%= select_tag "select_referred_by", options_for_select([nil, "Craigslist", "Facebook", "Friend", "Other"]), class:  "form-control", onchange: 'setReferredBy(this.value);' %>
@@ -138,6 +138,42 @@
                 <%= f.label :referred_by, "Please select or enter a value", class: "error" %>
               <% end %>
             </div>
+          </div>
+
+          <div class="row application-row">
+            <div>
+              <div class="col-md-9">
+                <%= f.label :referral_email_0, "Refer up to 3 friends! Please enter their emails below", class: "control-label" %>
+              </div>
+              <div class="col-md-3">
+                <%= f.label :is_partner_0, "Driving partner?", class: "control-label" %>
+              </div>
+            </div>
+            <div>
+              <div class="col-md-9">
+                <%= f.email_field :referral_email_0, class: "form-control", placeholder: "alice@gmail.com" %>
+              </div>
+              <div class="col-md-3">
+                <%= f.check_box :is_partner_0 %>
+              </div>
+            </div>
+             <div>
+              <div class="col-md-9">
+                <%= f.email_field :referral_email_1, class: "form-control", placeholder: "bob@gmail.com" %>
+              </div>
+              <div class="col-md-3">
+                <%= f.check_box :is_partner_1 %>
+              </div>
+            </div>
+             <div>
+              <div class="col-md-9">
+                <%= f.email_field :referral_email_2, class: "form-control", placeholder: "carol@gmail.com" %>
+              </div>
+              <div class="col-md-3">
+                <%= f.check_box :is_partner_2 %>
+              </div>
+            </div>
+
           </div>
 
           <div class="row application-submit">

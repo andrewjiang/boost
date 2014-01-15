@@ -1,6 +1,9 @@
 require 'paperclip'
 
 class DriverApplication < ActiveRecord::Base
+  attr_accessor :referral_email_0, :referral_email_1, :referral_email_2,
+                :is_partner_0, :is_partner_1, :is_partner_2
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :facebook_link, presence: true

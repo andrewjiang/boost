@@ -22,4 +22,5 @@ class DriverApplication < ActiveRecord::Base
 
   validates :drive_days_per_week, presence: true
   validates :parking_pref, presence: true
+  validates :referred_by, presence: true
 end

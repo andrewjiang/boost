@@ -17,6 +17,7 @@ ActiveAdmin.register DriverApplication do
       row :zip_code
       row :drive_days_per_week
       row :parking_pref
+      row :referred_by
       row :updated_at
       row :resume do
         link_to driver_application.resume_file_name, driver_application.resume.url

@@ -9,7 +9,7 @@
 </div>
 <div class="container-fluid">
   <div class="container" id="drivers-form" role="main" >
-    <%= form_for(@driver_application, html: { class: "form-horizontal" } ) do |f| %>
+    <%= form_for(@driver_application, html: { class: "form-horizontal" }) do |f| %>
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
           <div class="row application-row">
@@ -91,7 +91,7 @@
               <%= f.label :How_many_days_per_week_would_you_like_to_drive?, class: "control-label" %>
             </div>
             <div class="col-md-12">
-              <%= f.select :drive_days_per_week, options_for_select([1, 2, 3, 4, 5, 6, 7]), {:prompt => ""}, {class: "form-control"} %>
+              <%= f.select :drive_days_per_week, options_for_select([["", nil], 1, 2, 3, 4, 5, 6, 7]), {}, {class: "form-control"} %>
               <% if f.object.errors.include?(:drive_days_per_week) %>
                 <%= f.label :drive_days_per_week, "Please select a value", class: "error" %>
               <% end %>
@@ -103,9 +103,9 @@
               <%= f.label "How would you park at home?", class: "control-label" %>
             </div>
             <div class="col-md-12">
-              <%= f.select :parking_pref, options_for_select(["Garage", "Driveway", "Street"]), {:prompt => ""}, {class: "form-control"} %>
+              <%= f.select :parking_pref, options_for_select([["", nil], "Garage", "Driveway", "Street"]), {}, {class: "form-control"} %>
               <% if f.object.errors.include?(:parking_pref) %>
-                <%= f.label :parking_pref, "Please select or enter a value", class: "error" %>
+                <%= f.label :parking_pref, "Please select a value", class: "error" %>
               <% end %>
             </div>
           </div>
@@ -123,6 +123,19 @@
               <%= f.file_field :drivers_license, class: "application-file"  %>
               <% if f.object.errors.include?(:drivers_license) %>
                 <%= f.label :drivers_license, "Please upload a photo", class: "error" %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row application-row">
+            <div class="col-md-12">
+              <%= f.label "How'd you hear about us?", class: "control-label" %>
+            </div>
+            <div class="col-md-12">
+              <%= select_tag "select_referred_by", options_for_select([nil, "Craigslist", "Facebook", "Friend", "Other"]), class:  "form-control", onchange: 'setReferredBy(this.value);' %>
+              <%= f.text_field :referred_by, id: "referredByOther", style: "display:none", class: "form-control" %>
+              <% if f.object.errors.include?(:referred_by) %>
+                <%= f.label :referred_by, "Please select or enter a value", class: "error" %>
               <% end %>
             </div>
           </div>

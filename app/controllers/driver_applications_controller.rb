@@ -30,6 +30,7 @@ class DriverApplicationsController < ApplicationController
           :drive_days_per_week,
           :parking_pref,
           :resume,
-          :drivers_license)
+          :drivers_license,
+          :referred_by)
     end
 end

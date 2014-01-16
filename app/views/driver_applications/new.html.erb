@@ -108,12 +108,15 @@
             <div class="col-md-12">
               <%= f.label :drive_days_per_week, "How many days per week would you like to drive?", class: "control-label" %>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12" id="popcorn">
+              <div id="popover" data-toggle="popover" data-placement="left" data-content="Zephyr assumes you can commit to renting the car every week on the days you select. Before selecting your preferences, make sure you can drive during PEAK hours or at least 8 hours / day to make it worth the daily fee. Preference will be given to applicants that can work 3 or more consecutive days." title="Time commitment"></div>
               <%= f.select :drive_days_per_week, options_for_select([["Select a number (1-7)", nil], 1, 2, 3, 4, 5, 6, 7]), {}, {class: "form-control"} %>
               <% if f.object.errors.include?(:drive_days_per_week) %>
                 <%= f.label :drive_days_per_week, "Please select a value", class: "error" %>
               <% end %>
+
             </div>
+
           </div>
 
           <div class="row application-row">

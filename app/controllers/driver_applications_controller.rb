@@ -6,6 +6,7 @@ class DriverApplicationsController < ApplicationController
   def create
     @driver_application = DriverApplication.new(driver_application_params)
     if @driver_application.save
+      DriverApplicationMailer.confirmation_email(@driver_application).deliver
       flash[:"success alert alert-success ephemeral"] = "You have successfully submitted your application! Our team will review your application and contact you shortly"
       redirect_to root_path
     else

@@ -9,6 +9,182 @@
 </div>
 <div class="container-fluid">
   <div class="container" id="owners-form" role="main" >
+    <%= form_for(@car_listing) do |f| %>
+      <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+
+            <div class="row application-row">
+              <div class="col-md-12">
+                <%= f.label :first_name, "Name", class: "control-label" %>
+                <div class="row">
+                  <div class="col-md-6">
+                    <%= f.text_field :first_name, class: "form-control", placeholder: "First" %>
+                    <% if f.object.errors.include?(:first_name) %>
+                      <%= f.label :first_name, "First name is required", class: "error" %>
+                    <% end %>
+                  </div>
+                  <div class="col-md-6">
+                    <%= f.text_field :last_name, class: "form-control", placeholder: "Last" %>
+                    <% if f.object.errors.include?(:last_name) %>
+                      <%= f.label :last_name, "Last name is required", class: "error" %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row application-row">
+              <div class="col-md-12">
+                <%= f.label :phone_number, "Phone", class: "control-label" %>
+                <%= f.telephone_field :phone_number, class: "form-control", placeholder: "555-555-5555" %>
+                <% if f.object.errors.include?(:phone_number) %>
+                  <%= f.label :phone_number, "A phone number is required", class: "error" %>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="row application-row">
+              <div class="col-md-6">
+                <%= f.label :email, class: "control-label" %>
+                <%= f.email_field :email, class: "form-control", placeholder: "wile.e.coyote@acme.com" %>
+                <% if f.object.errors.include?(:email) %>
+                  <%= f.label :email, "An email is required", class: "error" %>
+                <% end %>
+              </div>
+              <div class="col-md-6">
+                <%= f.label :city, class: "control-label" %>
+                <%= f.text_field :city, class: "form-control", placeholder: "San Francisco" %>
+                <% if f.object.errors.include?(:city) %>
+                  <%= f.label :city, "A city is required", class: "error" %>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="row application-row">
+              <div class="col-md-6">
+                <%= f.label :year, class: "control-label" %>
+                <%= f.text_field :year, class: "form-control", placeholder: "2010" %>
+                <% if f.object.errors.include?(:year) %>
+                  <%= f.label :year, "A year is required", class: "error" %>
+                <% end %>
+              </div>
+              <div class="col-md-6">
+                <%= f.label :make, class: "control-label" %>
+                <%= f.text_field :make, class: "form-control", placeholder: "Honda" %>
+                <% if f.object.errors.include?(:make) %>
+                  <%= f.label :make, "A make is required", class: "error" %>
+                <% end %>
+              </div>
+            </div>
+
+
+            <div class="row application-row">
+              <div class="col-md-6">
+                <%= f.label :model, class: "control-label" %>
+                <%= f.text_field :model, class: "form-control", placeholder: "Accord" %>
+                <% if f.object.errors.include?(:model) %>
+                  <%= f.label :model, "A model is required", class: "error" %>
+                <% end %>
+              </div>
+              <div class="col-md-6">
+                <%= f.label :color, class: "control-label" %>
+                <%= f.text_field :color, class: "form-control", placeholder: "Blue" %>
+                <% if f.object.errors.include?(:color) %>
+                  <%= f.label :color, "A color is required", class: "error" %>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="row application-row">
+              <div class="col-md-6">
+                <%= f.label :mileage, "Approximate mileage", class: "control-label" %>
+                <%= f.text_field :mileage, class: "form-control", placeholder: "10,000" %>
+                <% if f.object.errors.include?(:mileage) %>
+                  <%= f.label :mileage, "Approx. mileage is required", class: "error" %>
+                <% end %>
+              </div>
+              <div class="col-md-6">
+                <%= f.label :vin, class: "control-label" %>
+                <%= f.text_field :vin, class: "form-control", placeholder: "1M8GDM9A_KP042788" %>
+                <% if f.object.errors.include?(:vin) %>
+                  <%= f.label :vin, "VIN is required", class: "error" %>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="row application-row">
+              <div class="col-md-6">
+                <%= f.label :availability_date, "When is the car available?", class: "control-label" %>
+                <%= f.text_field :availability_date, class: "form-control", placeholder: "02-10-2014" %>
+                <% if f.object.errors.include?(:availability_date) %>
+                  <%= f.label :availability_date, "Availability date is required", class: "error" %>
+                <% end %>
+              </div>
+              <div class="col-md-6">
+                <%= f.label :last_oil_change_date, "Last oil change", class: "control-label" %>
+                <%= f.text_field :last_oil_change_date, class: "form-control", placeholder: "08-01-2013" %>
+                <% if f.object.errors.include?(:last_oil_change_date) %>
+                  <%= f.label :last_oil_change_date, "Last oil change date is required", class: "error" %>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="row application-row">
+              <div class="col-md-6">
+                <%= f.label :last_month_registered_date, "Last month registered", class: "control-label" %>
+                <%= f.text_field :last_month_registered_date, class: "form-control", placeholder: "04-01-2013" %>
+                <% if f.object.errors.include?(:last_month_registered_date) %>
+                  <%= f.label :last_month_registered_date, "Last month registered is required", class: "error" %>
+                <% end %>
+              </div>
+              <div class="col-md-6">
+                <%= f.label :car_picture, "Picture of your car", class: "control-label" %>
+                <%= f.file_field :car_picture, class: "application-file" %>
+                <% if f.object.errors.include?(:car_picture) %>
+                  <%= f.label :car_picture, "Please upload a picture of your car", class: "error" %>
+                <% end %>
+              </div>
+            </div>
+
+             <div class="row application-row">
+              <div class="col-md-12">
+                <%= f.label :issues, "Describe any damage, accidents or issues with the car.", class: "control-label" %>
+                <%= f.text_area :issues, class: "form-control" %>
+              </div>
+            </div>
+
+             
+             <div class="row application-row">
+              <div class="col-md-12">
+                <%= f.label :features, "Tell us a little about the car. What other features does it have? Please include any links to other sites (Getaround, Relay Rides, etc.)", class: "control-label" %>
+                <%= f.text_area :features, class: "form-control" %>
+                <% if f.object.errors.include?(:features) %>
+                  <%= f.label :features, "Please describe the car a little", class: "error" %>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="row application-row">
+            <div class="col-md-12">
+              <%= f.label "How'd you hear about us?", for: "select_referred_by", class: "control-label" %>
+            </div>
+            <div class="col-md-12">
+              <%= select_tag "select_referred_by", options_for_select([["Select an answer", nil], "Craigslist", "Facebook", "Friend", "Other"]), class:  "form-control", onchange: 'setReferredBy(this.value);' %>
+              <%= f.text_field :referred_by, id: "referredByOther", style: "display:none", class: "form-control", placeholder: "Please provide referral details" %>
+              <% if f.object.errors.include?(:referred_by) %>
+                <%= f.label :referred_by, "Please select or enter a value", class: "error" %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row application-submit">
+            <%= f.submit "SUBMIT", class: "btn btn-lg btn-info" %>
+          </div>
+          
+        </div>
+      </div>
+
+    <% end %>
   </div>
 </div>
 <script>

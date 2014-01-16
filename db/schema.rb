@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115113836) do
+ActiveRecord::Schema.define(version: 20140116060126) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -45,6 +45,32 @@ ActiveRecord::Schema.define(version: 20140115113836) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+
+  create_table "car_listings", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone_number"
+    t.string   "email"
+    t.string   "city"
+    t.string   "year"
+    t.string   "make"
+    t.string   "model"
+    t.string   "color"
+    t.string   "mileage"
+    t.string   "vin"
+    t.string   "availability_date"
+    t.string   "last_oil_change_date"
+    t.string   "last_month_registered_date"
+    t.string   "issues"
+    t.string   "features"
+    t.string   "referred_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "car_picture_file_name"
+    t.string   "car_picture_content_type"
+    t.integer  "car_picture_file_size"
+    t.datetime "car_picture_updated_at"
+  end
 
   create_table "driver_applications", force: true do |t|
     t.string   "first_name"

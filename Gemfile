@@ -8,6 +8,7 @@ gem 'aws-sdk'
 gem 'devise', '~> 3.2'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'actionmailer', '4.0.2'
+gem 'delayed_job_active_record'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

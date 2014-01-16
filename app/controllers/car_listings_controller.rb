@@ -6,7 +6,7 @@ class CarListingsController < ApplicationController
   def create
     @car_listing = CarListing.new(car_listing_params)
     if @car_listing.save
-      flash[:success] = "Thanks for listing your car! We will be contacting you shortly."
+      flash[:"success alert alert-success ephemeral"] = "Thanks for listing your car! We will be contacting you shortly."
       redirect_to root_path
     else
       render 'new'

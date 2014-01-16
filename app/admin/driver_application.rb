@@ -8,6 +8,8 @@ ActiveAdmin.register DriverApplication do
   show do |driver_application|
     attributes_table do
       row :id
+      row :created_at
+      row :updated_at
       row :first_name
       row :last_name
       row :facebook_link
@@ -20,7 +22,6 @@ ActiveAdmin.register DriverApplication do
       row :referred_by
       row :referral_emails
       row :partner_emails
-      row :updated_at
       row :resume do
         link_to driver_application.resume_file_name, driver_application.resume.url
       end

@@ -6,6 +6,7 @@ class CarListingsController < ApplicationController
   def create
     @car_listing = CarListing.new(car_listing_params)
     if @car_listing.save
+      CarListingMailer.confirmation_email(@car_listing).deliver
       flash[:"success alert alert-success ephemeral"] = "Thanks for listing your car! A Zephyr car specialist will reach out if there is a match"
       redirect_to root_path
     else

@@ -9,6 +9,10 @@ Zephyr::Application.routes.draw do
   match '/list',  to: 'car_listings#new',        via: 'get'
   match '/drive', to: 'driver_applications#new', via: 'get'
 
+  if Rails.env.development?
+    mount MailPreview => 'mail_view'
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

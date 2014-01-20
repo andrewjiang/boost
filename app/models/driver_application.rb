@@ -1,6 +1,9 @@
 require 'paperclip'
 
 class DriverApplication < ActiveRecord::Base
+  has_one :application_stage, dependent: :destroy
+  before_create :default_values
+
   attr_accessor :referral_email_0, :referral_email_1, :referral_email_2,
                 :is_partner_0, :is_partner_1, :is_partner_2
 
@@ -26,4 +29,11 @@ class DriverApplication < ActiveRecord::Base
   validates :drive_days_per_week, presence: true
   validates :parking_pref, presence: true
   validates :referred_by, presence: true
+
+  private
+
+    def default_values
+      build_application_stage
+      true
+    end
 end

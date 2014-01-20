@@ -54,6 +54,17 @@ ActiveAdmin.register DriverApplication do
         rows :fit_score, :pass, :reason_if_fail, :clean_driving_record, :commitments, :max_availability, :num_partners, :reservation_fee, :forms_sent, :scheduling_email
       end
     end
+    panel "Onboarding Stage" do
+      stage = driver_application.onboarding_stage
+      div do
+        link_to 'Edit', "/admin/onboarding_stages/#{stage.id}/edit", :class => "resource_id_link", :target => "_blank"
+      end
+
+      attributes_table_for(stage) do
+        rows :signed, :email_forwarding, :referral_email
+      end
+    end
+
     active_admin_comments
   end
 end

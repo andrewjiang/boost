@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120085643) do
+ActiveRecord::Schema.define(version: 20140120092056) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -121,6 +121,13 @@ ActiveRecord::Schema.define(version: 20140120085643) do
     t.string   "referred_by"
     t.string   "referral_emails"
     t.string   "partner_emails"
+  end
+
+  create_table "onboarding_stages", force: true do |t|
+    t.boolean "signed"
+    t.boolean "email_forwarding"
+    t.boolean "referral_email"
+    t.integer "driver_application_id"
   end
 
   create_table "phone_screen_stages", force: true do |t|

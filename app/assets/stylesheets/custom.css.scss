@@ -79,20 +79,20 @@
     color: #555;
   }
 	#header-list-car{
-		color: #777;
+		color: rgba(22, 160, 133, 0.8);
 		font-weight: 700;
 		font-size: 16px;
 	}
 	#header-list-car:hover{
-		color: #555;
+		color: rgb(12, 137, 112);
 	}
 	#header-CTA{
 		font-weight: bolder;
 		font-size: 16px;
-		color: #1d93dd;
+		color: rgba(29, 147, 221, 0.8);
 	}
 	#header-CTA:hover{
-		color: #1776B1;
+		color: rgb(23, 118, 177);
 	}
 	a.dropdown-toggle{
 		color:#555;
@@ -202,16 +202,6 @@
 
   label.error{
     color:#DA6565;
-  }
-  #error_explanation {
-    color: #f00;
-    ul {
-      list-style: none;
-      margin: 0 0 18px 0;
-    }
-  }
-  .field_with_errors {
-    @extend .has-error;
   }
 /* End Base CSS */
 
@@ -483,6 +473,13 @@
 		font-weight: 300;
 		font-size: 16px;
 	}
+	.banner-sessions{
+		background-color: #777;
+		color: #fff;
+		border-bottom: 1px solid #e5e5e5;
+		line-height: 50px;
+		padding: 20px 0px 40px 0px;
+	}
 	#list-top-owners{
 		background-color: rgba(22, 160, 133,0.8);
 		color: #fff;
@@ -497,10 +494,17 @@
 		line-height: 50px;
 		padding: 20px 0px 40px 0px;
 	}
-	#list-top-drivers h1, #list-top-owners h1{
+	#list-top-drivers{
+		background-color: rgba(29, 147, 221,0.8);
+		color: #fff;
+		border-bottom: 1px solid #e5e5e5;
+		line-height: 50px;
+		padding: 20px 0px 40px 0px;
+	}
+	#list-top-drivers h1, #list-top-owners h1, .banner-sessions h1{
 		padding-bottom: 10px;
 	}
-	#list-top-drivers h5, #list-top-owners h5{
+	#list-top-drivers h5, #list-top-owners h5, .banner-sessions h5{
 		font-size: 16px;
 		font-weight: 300;
 		color: #FAFBFC
@@ -606,34 +610,40 @@
 	#owners-form{
 		padding: 20px;
 	}
+	.sessions-form{
+		padding: 20px;
+	}
 	.application-file{
 		padding-top: 10px;
 	}
 
-	.application-row{
+	.form-row{
 		margin-bottom: 10px;
 		min-height: 40px;
 	}
 
-	.application-row input.form-control{
+	.form-row input.form-control{
 		height: 40px;
 	}
 
-	.application-submit{
+	.form-submit{
 		margin: 30px 0px;
 	}
 
-	.application-submit .btn{
+	.form-submit .btn{
 		width: 100%;
 		border-radius: 2px;
 	}
 
-	.application-row label.control-label{
+	.form-row label.control-label{
 		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 		font-size: 16px;
 		font-weight: 300;
 		color: #14679B;
 		padding-bottom: 2px;
+	}
+	.form-alt-link {
+		text-align: center
 	}
 	.referral-row input{
 		margin: 4px 0px;

@@ -1,4 +1,4 @@
-<div class="container-fluid" id="list-top-new-password">
+<div class="container-fluid banner-sessions">
   <div class="container">
     <center>
       <h1>Forgot your password?</h1>
@@ -6,20 +6,32 @@
   </div>
 </div>
 <div class="container-fluid">
-  <div class="container" id="new-password-form" role="main">
-    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, class: "form-horizontal" }) do |f| %>
-      <% devise_error_messages! %>
+  <div class="container sessions-form" role="main">
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post}) do |f| %>
+      <div class="col-md-6 col-md-offset-3">
+        
+        <div class="row">
+          <div class="col-md-12">
+            <% if !f.object.errors.empty? %>
+              <%= f.label :email, f.object.errors.full_messages[0], class: "error" %>
+            <% end %>
+          </div>
+        </div>
 
-      <div class="form-group">
-        <%= f.label :email, class: "col-sm-3 control-label" %>
-        <div class="col-sm-9">
-          <%= f.email_field :email, class: "form-control", :autofocus => true %>
+        <div class="row form-row">
+          <div class="col-md-12">
+            <%= f.email_field :email, class: "form-control", placeholder: "Enter your email", :autofocus => true %>
+          </div>
+        </div>
+
+        <div class="row form-submit">
+          <%= f.submit "RESET PASSWORD", class: "btn btn-lg btn-info" %>
+        </div>
+
+        <div class="row form-row form-alt-link">
+          <%= render "devise/shared/links" %>
         </div>
       </div>
-
-      <div><%= f.submit "Send me reset password instructions", class: "btn btn-larg btn-primary" %></div>
     <% end %>
-
-    <%= render "devise/shared/links" %>
   </div>
 </div>

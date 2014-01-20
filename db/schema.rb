@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140119015715) do
+ActiveRecord::Schema.define(version: 20140120085643) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -121,6 +121,20 @@ ActiveRecord::Schema.define(version: 20140119015715) do
     t.string   "referred_by"
     t.string   "referral_emails"
     t.string   "partner_emails"
+  end
+
+  create_table "phone_screen_stages", force: true do |t|
+    t.integer "fit_score"
+    t.boolean "pass"
+    t.string  "reason_if_fail"
+    t.boolean "clean_driving_record"
+    t.string  "commitments"
+    t.string  "max_availability"
+    t.integer "num_partners"
+    t.boolean "reservation_fee"
+    t.boolean "forms_sent"
+    t.boolean "scheduling_email"
+    t.integer "driver_application_id"
   end
 
   create_table "users", force: true do |t|

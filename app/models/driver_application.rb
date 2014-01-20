@@ -2,6 +2,7 @@ require 'paperclip'
 
 class DriverApplication < ActiveRecord::Base
   has_one :application_stage, dependent: :destroy
+  has_one :phone_screen_stage, dependent: :destroy
   before_create :default_values
 
   attr_accessor :referral_email_0, :referral_email_1, :referral_email_2,
@@ -34,6 +35,7 @@ class DriverApplication < ActiveRecord::Base
 
     def default_values
       build_application_stage
+      build_phone_screen_stage
       true
     end
 end

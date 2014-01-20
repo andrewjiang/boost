@@ -4,6 +4,7 @@ class DriverApplication < ActiveRecord::Base
   has_one :application_stage, dependent: :destroy
   has_one :phone_screen_stage, dependent: :destroy
   has_one :onboarding_stage, dependent: :destroy
+  has_one :activation_stage, dependent: :destroy
   before_create :default_values
 
   attr_accessor :referral_email_0, :referral_email_1, :referral_email_2,
@@ -38,6 +39,7 @@ class DriverApplication < ActiveRecord::Base
       build_application_stage
       build_phone_screen_stage
       build_onboarding_stage
+      build_activation_stage
       true
     end
 end

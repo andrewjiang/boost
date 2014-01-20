@@ -64,6 +64,16 @@ ActiveAdmin.register DriverApplication do
         rows :signed, :email_forwarding, :referral_email
       end
     end
+    panel "Activation Stage" do
+      stage = driver_application.activation_stage
+      div do
+        link_to 'Edit', "/admin/activation_stages/#{stage.id}/edit", :class => "resource_id_link", :target => "_blank"
+      end
+
+      attributes_table_for(stage) do
+        rows :car_received, :uber, :lyft, :sidecar, :partner_email, :schedule, :swaps
+      end
+    end
 
     active_admin_comments
   end

@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120092056) do
+ActiveRecord::Schema.define(version: 20140120093237) do
+
+  create_table "activation_stages", force: true do |t|
+    t.boolean "car_received"
+    t.boolean "uber"
+    t.boolean "lyft"
+    t.boolean "sidecar"
+    t.string  "partner_email"
+    t.string  "schedule"
+    t.string  "swaps"
+    t.integer "driver_application_id"
+  end
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"

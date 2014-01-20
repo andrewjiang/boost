@@ -44,6 +44,16 @@ ActiveAdmin.register DriverApplication do
         rows  :phone_screen_status, :quiz_score, :facebook_like, :meets_hard_requirements
       end
     end
+    panel "Phone Screen Stage" do
+      stage = driver_application.phone_screen_stage
+      div do
+        link_to 'Edit', "/admin/phone_screen_stages/#{stage.id}/edit", :class => "resource_id_link", :target => "_blank"
+      end
+
+      attributes_table_for(stage) do
+        rows :fit_score, :pass, :reason_if_fail, :clean_driving_record, :commitments, :max_availability, :num_partners, :reservation_fee, :forms_sent, :scheduling_email
+      end
+    end
     active_admin_comments
   end
 end

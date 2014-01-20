@@ -1,5 +1,6 @@
 Zephyr::Application.routes.draw do
 
+  devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :car_listings,        only: [:new, :create, :destroy]

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120093237) do
+ActiveRecord::Schema.define(version: 20140120100144) do
 
   create_table "activation_stages", force: true do |t|
     t.boolean "car_received"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140120093237) do
     t.string  "schedule"
     t.string  "swaps"
     t.integer "driver_application_id"
+    t.string  "notes"
   end
 
   create_table "active_admin_comments", force: true do |t|
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 20140120093237) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "driver_application_id"
+    t.string   "notes"
   end
 
   create_table "car_listings", force: true do |t|
@@ -139,6 +141,7 @@ ActiveRecord::Schema.define(version: 20140120093237) do
     t.boolean "email_forwarding"
     t.boolean "referral_email"
     t.integer "driver_application_id"
+    t.string  "notes"
   end
 
   create_table "phone_screen_stages", force: true do |t|
@@ -153,6 +156,7 @@ ActiveRecord::Schema.define(version: 20140120093237) do
     t.boolean "forms_sent"
     t.boolean "scheduling_email"
     t.integer "driver_application_id"
+    t.string  "notes"
   end
 
   create_table "users", force: true do |t|

@@ -41,7 +41,7 @@ ActiveAdmin.register DriverApplication do
       end
 
       attributes_table_for(stage) do
-        rows  :phone_screen_status, :quiz_score, :facebook_like, :meets_hard_requirements
+        rows  :phone_screen_status, :quiz_score, :facebook_like, :meets_hard_requirements, :notes
       end
     end
     panel "Phone Screen Stage" do
@@ -51,7 +51,7 @@ ActiveAdmin.register DriverApplication do
       end
 
       attributes_table_for(stage) do
-        rows :fit_score, :pass, :reason_if_fail, :clean_driving_record, :commitments, :max_availability, :num_partners, :reservation_fee, :forms_sent, :scheduling_email
+        rows :fit_score, :pass, :reason_if_fail, :clean_driving_record, :commitments, :max_availability, :num_partners, :reservation_fee, :forms_sent, :scheduling_email, :notes
       end
     end
     panel "Onboarding Stage" do
@@ -61,7 +61,7 @@ ActiveAdmin.register DriverApplication do
       end
 
       attributes_table_for(stage) do
-        rows :signed, :email_forwarding, :referral_email
+        rows :signed, :email_forwarding, :referral_email, :notes
       end
     end
     panel "Activation Stage" do
@@ -71,7 +71,7 @@ ActiveAdmin.register DriverApplication do
       end
 
       attributes_table_for(stage) do
-        rows :car_received, :uber, :lyft, :sidecar, :partner_email, :schedule, :swaps
+        rows :car_received, :uber, :lyft, :sidecar, :partner_email, :schedule, :swaps, :notes
       end
     end
 

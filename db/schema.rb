@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120220047) do
+ActiveRecord::Schema.define(version: 20140120224732) do
 
   create_table "activation_stages", force: true do |t|
     t.boolean "car_received"
@@ -94,6 +94,15 @@ ActiveRecord::Schema.define(version: 20140120220047) do
     t.integer  "car_picture_file_size"
     t.datetime "car_picture_updated_at"
   end
+
+  create_table "car_slots", force: true do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "user_id"
+    t.string   "status"
+  end
+
+  add_index "car_slots", ["user_id"], name: "user_idx"
 
   create_table "cars", force: true do |t|
     t.string  "make"

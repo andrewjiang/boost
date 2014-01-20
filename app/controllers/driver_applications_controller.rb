@@ -8,7 +8,7 @@ class DriverApplicationsController < ApplicationController
     if @driver_application.save
       DriverApplicationMailer.confirmation_email(@driver_application).deliver
       DriverApplicationMailer.delay(run_at: 7.minutes.from_now).next_steps_email(@driver_application)
-      flash[:"success alert alert-success ephemeral"] = "You have successfully submitted your application! Our team will review your application and contact you shortly"
+      flash[:notice] = "You have successfully submitted your application! Our team will review your application and contact you shortly"
       redirect_to root_path
     else
       render 'new'

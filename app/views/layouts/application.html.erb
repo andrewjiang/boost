@@ -18,7 +18,11 @@
 	<body>
 	  <%= render 'layouts/header' %>
       <% flash.each do |key, value| %>
-        <div class="<%= key %>"><%= value %></div>
+        <% if key == :notice %>
+          <div class="alert alert-success ephemeral"><%= value %></div>
+        <% else %>
+          <div class="alert alert-danger ephemeral"><%= value %></div>
+        <% end %>
       <% end %>
 	  <%= yield %>
 	  <%= render 'layouts/footer' %>

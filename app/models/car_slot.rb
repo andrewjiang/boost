@@ -7,7 +7,11 @@ class CarSlot < ActiveRecord::Base
   belongs_to :user
 
   def label
-    "%s ($%05.2f)" % [ self.start_time.to_formatted_s(:car_slot), self.fee ]
+    if self.fee == 0
+      "%s ($0)" % self.start_time.to_formatted_s(:car_slot)
+    else
+      "%s ($%05.2f)" % [ self.start_time.to_formatted_s(:car_slot), self.fee ]
+    end
   end
 
   # Returns whether the slot is locked, which means it cannot be changed for charging purposes

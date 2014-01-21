@@ -1,8 +1,7 @@
 class CarSlotsController < ApplicationController
 
   def update
-    params[:status] = params[:status] == 'reserved' ? 'cancelled' : 'reserved'
-    render :toggle, locals: { :car_slot_params => params }
+    render :toggle, locals: { :car_slot => CarSlot.find(params[:id]).toggle_status!, :idx => params[:idx] }
   end
 
 end

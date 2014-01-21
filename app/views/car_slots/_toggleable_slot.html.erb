@@ -1,7 +1,7 @@
-<div class="car-slot car-slot-status-<%= car_slot_params[:status] %>">
-  <% if car_slot_params[:status] == 'unassigned' %>
-    <%= car_slot_params[:label] %>
+<div class="car-slot car-slot-status-<%= car_slot.status %>">
+  <% if car_slot.status == 'unassigned' %>
+    <%= car_slot.label %>
   <% else %>
-    <%= button_to car_slot_params[:label], car_slot_path(car_slot_params), :class => "btn btn-lg car-slot-toggleable", :method => :patch, remote: true %>
+    <%= button_to car_slot.label, car_slot_path(:id => car_slot.id, :idx => idx), :class => "btn btn-lg car-slot-toggleable", :method => :patch, remote: true %>
   <% end %>
 </div>

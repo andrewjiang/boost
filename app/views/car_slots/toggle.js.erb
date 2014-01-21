@@ -1,1 +1,1 @@
-$("#slot_idx_<%= car_slot_params[:idx] %>").html("<%= escape_javascript render('toggleable_slot', car_slot_params: car_slot_params) %>");
+$("#slot_idx_<%= idx %>").html("<%= escape_javascript render('toggleable_slot', car_slot: car_slot, idx: idx) %>");

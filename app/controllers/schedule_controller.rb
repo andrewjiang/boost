@@ -14,10 +14,11 @@ class ScheduleController < ApplicationController
     for i in 0..6
       d_formatted = d.to_formatted_s(:car_slot)
       if car_slots_by_start_time.include?(d_formatted)
-        cur_slot = car_slots_by_start_time[d_formatted]
-        @car_slots.push( { :id => cur_slot.id, :label => cur_slot.label, :status => cur_slot.status, :is_locked => cur_slot.locked? } )
+        car_slot = car_slots_by_start_time[d_formatted]
+        @car_slots.push( car_slot )
       else
-        @car_slots.push( { :label => d_formatted, :status => 'unassigned' } )
+        # Be careful to never save this record to the db. Once we support swapping slots, we'll be using actual car slot db records.
+        @car_slots.push( CarSlot.new(:start_time => d, :status => 'unassigned', :fee => 0) )
       end
       d = d.advance(:days => +1)
     end

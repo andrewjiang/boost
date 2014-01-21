@@ -15,9 +15,9 @@ class ScheduleController < ApplicationController
       d_formatted = d.to_formatted_s(:car_slot)
       if car_slots_by_start_time.include?(d_formatted)
         cur_slot = car_slots_by_start_time[d_formatted]
-        @car_slots.push( { :id => cur_slot.id, :name => d_formatted, :status => cur_slot.status } )
+        @car_slots.push( { :id => cur_slot.id, :label => cur_slot.label, :status => cur_slot.status, :is_locked => cur_slot.locked? } )
       else
-        @car_slots.push( { :id => -1, :name => d_formatted, :status => 'unassigned'} )
+        @car_slots.push( { :label => d_formatted, :status => 'unassigned' } )
       end
       d = d.advance(:days => +1)
     end

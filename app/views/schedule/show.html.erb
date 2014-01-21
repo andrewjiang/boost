@@ -9,7 +9,11 @@
     <% @car_slots.each do |car_slot_params| %>
       <div class="col-md-6 col-md-offset-3">
         <div id="slot_idx_<%= idx %>">
-          <%= render 'car_slots/car_slot_button', :car_slot_params => car_slot_params.merge({:idx => idx}) %>
+          <% if car_slot_params[:is_locked] %>
+            <%= render 'car_slots/locked_slot', :car_slot_params => car_slot_params %>
+          <% else %>
+            <%= render 'car_slots/toggleable_slot', :car_slot_params => car_slot_params.merge({:idx => idx}) %>
+          <% end %>
           <% idx += 1 %>
         </div>
       </div>    

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120224732) do
+ActiveRecord::Schema.define(version: 20140121065326) do
 
   create_table "activation_stages", force: true do |t|
     t.boolean "car_received"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20140120224732) do
     t.datetime "end_time"
     t.integer  "user_id"
     t.string   "status"
+    t.decimal  "fee",        precision: 8, scale: 2
   end
 
   add_index "car_slots", ["user_id"], name: "user_idx"

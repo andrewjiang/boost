@@ -41,7 +41,7 @@ ActiveAdmin.register DriverApplication do
       end
 
       attributes_table_for(stage) do
-        rows  :phone_screen_status, :quiz_score, :facebook_like, :meets_hard_requirements, :notes
+        rows :notes, :phone_screen_status, :meets_hard_requirements
       end
     end
     panel "Phone Screen Stage" do
@@ -51,7 +51,15 @@ ActiveAdmin.register DriverApplication do
       end
 
       attributes_table_for(stage) do
-        rows :fit_score, :pass, :reason_if_fail, :clean_driving_record, :commitments, :max_availability, :num_partners, :reservation_fee, :forms_sent, :scheduling_email, :notes
+        rows :notes, :fit_score, :pass, :reason_if_fail, :clean_driving_record, :commitments, :max_availability
+        row 'Partner? (0=Solo, 1=Partner' do 
+          stage.num_partners
+        end
+        row :reservation_fee
+        row 'Payment Type: options are "credit card", "debit card", "paypal"' do 
+          stage.payment_type
+        end
+        row :scheduling_email
       end
     end
     panel "Onboarding Stage" do
@@ -61,7 +69,7 @@ ActiveAdmin.register DriverApplication do
       end
 
       attributes_table_for(stage) do
-        rows :signed, :email_forwarding, :referral_email, :notes
+        rows :notes, :signed, :email_forwarding, :referral_email
       end
     end
     panel "Activation Stage" do
@@ -71,7 +79,7 @@ ActiveAdmin.register DriverApplication do
       end
 
       attributes_table_for(stage) do
-        rows :car_received, :uber, :lyft, :sidecar, :partner_email, :schedule, :swaps, :notes
+        rows :notes, :car_received, :uber, :lyft, :sidecar, :partner_email, :schedule, :swaps
       end
     end
 

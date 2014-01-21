@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120100144) do
+ActiveRecord::Schema.define(version: 20140121192321) do
 
   create_table "activation_stages", force: true do |t|
     t.boolean "car_received"
@@ -60,8 +60,6 @@ ActiveRecord::Schema.define(version: 20140120100144) do
 
   create_table "application_stages", force: true do |t|
     t.string   "phone_screen_status"
-    t.integer  "quiz_score"
-    t.boolean  "facebook_like"
     t.boolean  "meets_hard_requirements"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -153,10 +151,12 @@ ActiveRecord::Schema.define(version: 20140120100144) do
     t.string  "max_availability"
     t.integer "num_partners"
     t.boolean "reservation_fee"
-    t.boolean "forms_sent"
     t.boolean "scheduling_email"
     t.integer "driver_application_id"
     t.string  "notes"
+    t.string  "payment_type"
+    t.boolean "applied_to_uber"
+    t.boolean "applied_to_lyft"
   end
 
   create_table "users", force: true do |t|

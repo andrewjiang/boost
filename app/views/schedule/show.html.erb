@@ -5,11 +5,14 @@
 </div>
 <div class="container" role="main">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <%= render 'car_slots/car_slot_button', { :car_slot_params => { :id => 0, :name => "Monday", :status => "reserved" } } %>
-    </div>
-    <div class="col-md-6 col-md-offset-3">
-      <%= render 'car_slots/car_slot_button', { :car_slot_params => { :id => 1, :name => "Tuesday", :status => "cancelled"} } %>
-    </div>    
+    <% idx = 0 %>
+    <% @car_slots.each do |car_slot_params| %>
+      <div class="col-md-6 col-md-offset-3">
+        <div id="slot_idx_<%= idx %>">
+          <%= render 'car_slots/car_slot_button', :car_slot_params => car_slot_params.merge({:idx => idx}) %>
+          <% idx += 1 %>
+        </div>
+      </div>    
+    <% end %>
   </div>
 </div>

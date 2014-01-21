@@ -1,2 +1,15 @@
-<h1>Schedule#show</h1>
-<p>Find me in app/views/schedule/show.html.erb</p>
+<div class="container">
+  <center>
+    <h1>Driving Schedule</h1>
+  </center>
+</div>
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= render 'car_slots/car_slot_button', { :car_slot_params => { :id => 0, :name => "Monday", :status => "reserved" } } %>
+    </div>
+    <div class="col-md-6 col-md-offset-3">
+      <%= render 'car_slots/car_slot_button', { :car_slot_params => { :id => 1, :name => "Tuesday", :status => "cancelled"} } %>
+    </div>    
+  </div>
+</div>

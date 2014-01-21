@@ -663,3 +663,22 @@
 	}
 
 /* End Driver Application */
+
+/* Driving Schedule */
+
+	.car-slot-btn {
+		margin: 30px 0px;
+		width: 100%;
+		border-radius: 2px;
+		color: #fff;
+	}
+	.car-slot-status-reserved {
+		background-color: #15db2c;
+	}
+	.car-slot-status-cancelled {
+		background-color: #ff0033;
+	}
+
+/* End Driving Schedule */
+
+

@@ -5,12 +5,14 @@ Zephyr::Application.routes.draw do
   ActiveAdmin.routes(self)
   resources :car_listings,        only: [:new, :create, :destroy]
   resources :driver_applications, only: [:new, :create, :destroy]
+  resources :car_slots,           only: [:update]
 
   root 'home#index'
   match '/list',      to: 'car_listings#new',        via: 'get'
   match '/drive',     to: 'driver_applications#new', via: 'get'
   match '/dashboard', to: 'dashboard#show',          via: 'get'
   match '/schedule',  to: 'schedule#show',           via: 'get'
+  #match '/car_slot',  to: 'car_slot#update',         via: 'patch'
 
   if Rails.env.development?
     mount MailPreview => 'mail_view'

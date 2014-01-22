@@ -1,10 +1,106 @@
-<div class="container">
-  <center>
-    <h1>Driving Schedule</h1>
-  </center>
+<div class="container-fluid lgray-bkg top-fluid">
+  <div class="container segment-top">
+    <center>
+      <h2>Driving Schedule</h2>
+      <p>Click to toggle from <span class="flatgreen">Reserved</span> to <span class="flatred">Cancelled</span></p>
+    </center>
+  </div>
+  <div class="container segment-bottom" role="main">
+    <div class="row" id="dow-header">
+      <div class="col-md-2 col-md-offset-1">
+        
+      </div>
+      <div class="col-md-1">
+        M
+      </div>
+      <div class="col-md-1">
+        Tu
+      </div>
+      <div class="col-md-1">
+        W
+      </div>
+      <div class="col-md-1">
+        Th
+      </div>
+      <div class="col-md-1">
+        F
+      </div>
+      <div class="col-md-1">
+        Sa
+      </div>
+      <div class="col-md-1">
+        Su
+      </div>
+    </div>
+    <div class="row" id="thisweek">
+      <div class="col-md-2 col-md-offset-1">
+        This week
+      </div>
+      <div class="col-md-1 reserved locked">
+        1/20
+        <p>$50</p>
+      </div>
+      <div class="col-md-1 locked">
+        1/21
+        <p>$0</p>
+      </div>
+      <div class="col-md-1 reserved">
+        1/22
+        <p>$50</p>
+      </div>
+      <div class="col-md-1 cancelled">
+        1/23
+        <p>$20</p>
+      </div>
+      <div class="col-md-1">
+        1/24
+        <p>$0</p>
+      </div>
+      <div class="col-md-1 reserved">
+        1/25
+        <p>$50</p>
+      </div>
+      <div class="col-md-1">
+        1/26
+        <p>$0</p>
+      </div>
+    </div>
+    <div class="row" id="nextweek">
+      <div class="col-md-2 col-md-offset-1">
+        Next week
+      </div>
+      <div class="col-md-1 reserved">
+        1/27
+        <p>$50</p>
+      </div>
+      <div class="col-md-1">
+        1/28
+        <p>$0</p>
+      </div>
+      <div class="col-md-1 reserved">
+        1/29
+        <p>$50</p>
+      </div>
+      <div class="col-md-1 reserved">
+        1/30
+        <p>$50</p>
+      </div>
+      <div class="col-md-1">
+        1/31
+        <p>$0</p>
+      </div>
+      <div class="col-md-1 reserved">
+        2/1
+        <p>$50</p>
+      </div>
+      <div class="col-md-1">
+        2/2
+        <p>$0</p>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="container" role="main">
-  <div class="row">
+  <div class="row hidden">
     <% idx = 0 %>
     <% @car_slots.each do |car_slot| %>
       <div class="col-md-6 col-md-offset-3">
@@ -19,4 +115,3 @@
       </div>    
     <% end %>
   </div>
-</div>

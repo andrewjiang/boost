@@ -43,6 +43,9 @@
 	.white-bkg{
 		background-color: #fff;
 	}
+	.lgray-bkg{
+		background-color: #eee;
+	}
 /* End Colors CSS */
 
 /* Base CSS */
@@ -665,7 +668,88 @@
 /* End Driver Application */
 
 /* Car Slots */
+	
+	.segment-top{
+		border: 1px solid #ccc;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		background-color: #fff;
+		color: #333;
+		padding: 10px 0px;
+	}
+	.top-fluid{
+		padding: 20px 0px;
+	}
+	.segment-bottom{
+		border-left: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		background-color: #fff;
+		padding: 40px 0px;
+		min-height: 500px;
+	}
+	#dow-header .col-md-1{
+		font-size: 20px;
+		font-weight: 300;
+		color: #75ACD9;
+		text-align: center;
+		margin: 2px;
+		font-family: 'Alegreya Sans', Arial;
+	}
+	#thisweek .col-md-2{
+		font-weight: 600;
+	}
+	#thisweek .col-md-1, #nextweek .col-md-1{
+		border: 1px #aaa solid;
+		border-radius: 2px;
+		text-align: center;
+		padding: 20px;
+		font-size: 20px;
+		font-weight: bold;
+		margin: 2px;
+		color: #555;
+	}
+	#thisweek .col-md-1 p, #nextweek .col-md-1 p{
+		font-weight: 300;
+		padding-top: 10px;
 
+	}
+	#thisweek .col-md-2, #nextweek .col-md-2{
+		padding: 40px 20px 20px 20px;
+		font-size: 20px;
+		color: #555;
+	}
+	#thisweek, #nextweek, #dow-header{
+		margin: 20px 0px;
+	}
+	#thisweek .col-md-1.reserved, #nextweek .col-md-1.reserved{
+		border: 1px solid #27ae60;
+		background-color: #D4EFDF;
+		color: #27ae60
+	}
+	#thisweek .col-md-1.reserved:hover, #nextweek .col-md-1.reserved:hover{
+		border: 1px solid #208D4D;
+		color: #208D4D;
+		cursor: pointer;
+	}
+	#thisweek .col-md-1.cancelled, #nextweek .col-md-1.cancelled{
+		border: 1px solid #e74c3c;
+		background-color: #FADBD8;
+		color: #e74c3c;
+	}
+	#thisweek .col-md-1.cancelled:hover, #nextweek .col-md-1.cancelled:hover{
+		border: 1px solid #B93D30;
+		color: #B93D30;
+		cursor: pointer;
+	}
+	#thisweek .col-md-1.locked, #nextweek .col-md-1.locked, #thisweek .col-md-1.locked:hover, #nextweek .col-md-1.locked:hover{
+		background-color: #eee;
+		border: 1px solid #ccc;
+		color: #999;
+		cursor: default;
+	}
 	.car-slot {
 		margin: 10px 0px;
 		width: 100%;

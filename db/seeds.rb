@@ -35,7 +35,5 @@ if Rails.env == 'development'
   CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => alice.id, :status => 'reserved', :fee => 50)
   d = d.advance(:days => +1)
   CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => bob.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => alice.id, :status => 'reserved', :fee => 50)
 
 end

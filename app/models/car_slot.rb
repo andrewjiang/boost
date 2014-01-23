@@ -6,11 +6,19 @@ class CarSlot < ActiveRecord::Base
 
   belongs_to :user
 
-  def label
+  def time_label
+    self.start_time.to_formatted_s(:car_slot)
+  end
+
+  def self.time_label(start_time)
+    start_time.to_formatted_s(:car_slot)
+  end
+
+  def fee_label
     if self.fee == 0
-      "%s ($0)" % self.start_time.to_formatted_s(:car_slot)
+      "$0"
     else
-      "%s ($%05.2f)" % [ self.start_time.to_formatted_s(:car_slot), self.fee ]
+      "$%05.2f" % self.fee
     end
   end
 

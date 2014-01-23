@@ -724,22 +724,22 @@
 	#thisweek, #nextweek, #dow-header{
 		margin: 20px 0px;
 	}
-	#thisweek .col-md-1.reserved, #nextweek .col-md-1.reserved{
+	#thisweek .col-md-1.status-reserved, #nextweek .col-md-1.status-reserved{
 		border: 1px solid #27ae60;
 		background-color: #D4EFDF;
 		color: #27ae60
 	}
-	#thisweek .col-md-1.reserved:hover, #nextweek .col-md-1.reserved:hover{
+	#thisweek .col-md-1.status-reserved:hover, #nextweek .col-md-1.status-reserved:hover{
 		border: 1px solid #208D4D;
 		color: #208D4D;
 		cursor: pointer;
 	}
-	#thisweek .col-md-1.cancelled, #nextweek .col-md-1.cancelled{
+	#thisweek .col-md-1.status-cancelled, #nextweek .col-md-1.status-cancelled{
 		border: 1px solid #e74c3c;
 		background-color: #FADBD8;
 		color: #e74c3c;
 	}
-	#thisweek .col-md-1.cancelled:hover, #nextweek .col-md-1.cancelled:hover{
+	#thisweek .col-md-1.status-cancelled:hover, #nextweek .col-md-1.status-cancelled:hover{
 		border: 1px solid #B93D30;
 		color: #B93D30;
 		cursor: pointer;
@@ -749,35 +749,6 @@
 		border: 1px solid #ccc;
 		color: #999;
 		cursor: default;
-	}
-	.car-slot {
-		margin: 10px 0px;
-		width: 100%;
-		height: 50px;
-		border-radius: 2px;
-		text-align: center;
-		vertical-align: middle;
-		line-height: 50px;
-		font-size: 18px;
-	}
-	.car-slot-toggleable {
-		width: 100%;
-		height: 100%;
-		color: #fff;
-		background: transparent;
-	}
-	.car-slot-locked {
-		color: #fff;
-		opacity: 0.5;
-	}
-	.car-slot-status-reserved {
-		background-color: #15db2c;
-	}
-	.car-slot-status-cancelled {
-		background-color: #ff0033;
-	}
-	.car-slot-status-unassigned {
-		background-color: #727c7a;
 	}
 
 /* End Car Slots */

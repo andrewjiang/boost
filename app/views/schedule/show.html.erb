@@ -36,82 +36,35 @@
       <div class="col-md-2 col-md-offset-1">
         This week
       </div>
-      <div class="col-md-1 reserved locked">
-        1/20
-        <p>$50</p>
-      </div>
-      <div class="col-md-1 locked">
-        1/21
-        <p>$0</p>
-      </div>
-      <div class="col-md-1 reserved">
-        1/22
-        <p>$50</p>
-      </div>
-      <div class="col-md-1 cancelled">
-        1/23
-        <p>$20</p>
-      </div>
-      <div class="col-md-1">
-        1/24
-        <p>$0</p>
-      </div>
-      <div class="col-md-1 reserved">
-        1/25
-        <p>$50</p>
-      </div>
-      <div class="col-md-1">
-        1/26
-        <p>$0</p>
-      </div>
+      <% for idx in 0..6 %>
+        <% car_slot = @car_slots[idx] %>
+        <% if car_slot.locked? %>
+          <%= render 'car_slots/locked_slot', :car_slot => car_slot %>
+        <% else %>
+          <%= form_tag(car_slot_path(:id => car_slot.id, :idx => idx), :method => :patch, remote: true) do %>
+            <div id="slot_idx_<%= idx %>">
+              <%= render 'car_slots/toggleable_slot', :car_slot => car_slot, :idx => idx %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
     <div class="row" id="nextweek">
       <div class="col-md-2 col-md-offset-1">
         Next week
       </div>
-      <div class="col-md-1 reserved">
-        1/27
-        <p>$50</p>
-      </div>
-      <div class="col-md-1">
-        1/28
-        <p>$0</p>
-      </div>
-      <div class="col-md-1 reserved">
-        1/29
-        <p>$50</p>
-      </div>
-      <div class="col-md-1 reserved">
-        1/30
-        <p>$50</p>
-      </div>
-      <div class="col-md-1">
-        1/31
-        <p>$0</p>
-      </div>
-      <div class="col-md-1 reserved">
-        2/1
-        <p>$50</p>
-      </div>
-      <div class="col-md-1">
-        2/2
-        <p>$0</p>
-      </div>
+      <% for idx in 7..13 %>
+        <% car_slot = @car_slots[idx] %>
+        <% if car_slot.locked? %>
+          <%= render 'car_slots/locked_slot', :car_slot => car_slot %>
+        <% else %>
+          <%= form_tag(car_slot_path(:id => car_slot.id, :idx => idx), :method => :patch, remote: true) do %>
+            <div id="slot_idx_<%= idx %>">
+              <%= render 'car_slots/toggleable_slot', :car_slot => car_slot, :idx => idx %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
-  <div class="row hidden">
-    <% idx = 0 %>
-    <% @car_slots.each do |car_slot| %>
-      <div class="col-md-6 col-md-offset-3">
-        <div id="slot_idx_<%= idx %>">
-          <% if car_slot.locked? %>
-            <%= render 'car_slots/locked_slot', :car_slot => car_slot %>
-          <% else %>
-            <%= render 'car_slots/toggleable_slot', :car_slot => car_slot, :idx => idx %>
-          <% end %>
-          <% idx += 1 %>
-        </div>
-      </div>    
-    <% end %>
-  </div>

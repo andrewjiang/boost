@@ -1,0 +1,4 @@
+<%= active_admin_form_for @driver_application, :url => admin_driver_application_path(@driver_application) do |f| %>
+  <%= f.select "stage", options_for_select([ "Application", "Phone Screen", "Onboarding", "Activation", "Completed" ], @driver_application.stage) %>
+  <%= f.submit "Update" %>
+<% end %>

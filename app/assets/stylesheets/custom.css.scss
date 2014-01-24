@@ -54,15 +54,26 @@
 		font-family: 'Arial';
 		color: #333;
 	}
-  .navbar {
-    margin-bottom: 0 !important;
-  }
+	.navbar {
+	    margin-bottom: 0 !important;
+	}
+	.navbar-nav{
+		padding-top: 18px;
+		padding-bottom: 2px;
+		text-align: right;
+		float: right;
+	}
+	.navbar-header{
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
 	.navbar.navbar-default{
 		padding-top: 10px;
-		background-color: #FAFBFC;
+		background-color: #222;
 	}
 	nav.navbar.navbar-default{
-		border: 1px solid #ddd;
+		border: 1px solid #333;
 		border-radius: 0px;
 	}
   #header-signin{
@@ -109,23 +120,7 @@
 	.navbar-right a{
 		font-weight: bold;
 	}
-	.logo{
-		font-size: 36px;
-		color: rgba(22, 160, 133,1.0);
-		font-weight: bold;
-		font-family: 'Allan', 'Arial';
-		background-image: -webkit-gradient(
-		linear,
-		left top, left bottom,
-		from(rgba(22, 160, 133, 1)),
-		to(rgba(22, 160, 133, .7))
-		);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
-	.logo:hover{
-		text-decoration: none;
-	}
+
 	.tagline{
 			color: #999;
 			margin: -10px 0px 5px 0px;
@@ -571,7 +566,8 @@
 			text-shadow: rgba(0,0,0,0.75) 1px 1px 1px;
 		}
 		.navbar-header{
-			padding-left: 20px;
+			margin-right: auto;
+			margin-left: auto;
 		}
 		#key-features .col-md-4{
 			padding-left: 0px;
@@ -679,6 +675,7 @@
 	}
 	.top-fluid{
 		padding: 20px 0px;
+		border-top: 1px solid #FAFBFC;
 	}
 	.segment-bottom{
 		border-left: 1px solid #ccc;
@@ -706,6 +703,7 @@
 		border-radius: 2px;
 		text-align: center;
 		padding: 20px;
+		height: 120px;
 		font-size: 20px;
 		font-weight: bold;
 		margin: 2px;
@@ -724,24 +722,40 @@
 	#thisweek, #nextweek, #dow-header{
 		margin: 20px 0px;
 	}
-	#thisweek .col-md-1.status-reserved, #nextweek .col-md-1.status-reserved{
+	
+	
+	#thisweek .col-md-1.partner p, #nextweek .col-md-1.partner p{
+		font-size: 12px;
+	}
+	.car-slot {
+		margin: 10px 0px;
+		width: 100%;
+		height: 50px;
+		border-radius: 2px;
+		text-align: center;
+		vertical-align: middle;
+		line-height: 50px;
+		font-size: 18px;
+	}
+	.car-slot-toggleable {
+		width: 100%;
+		height: 100%;
+		background: transparent;
+	}
+	.car-slot-locked {
+		opacity: 0.5;
+	}
+	#thisweek .col-md-1.status-reserved, #nextweek .col-md-1.status-reserved {
 		border: 1px solid #27ae60;
 		background-color: #D4EFDF;
-		color: #27ae60
+		color: #27ae60;
+		-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+		box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 	}
 	#thisweek .col-md-1.status-reserved:hover, #nextweek .col-md-1.status-reserved:hover{
 		border: 1px solid #208D4D;
 		color: #208D4D;
-		cursor: pointer;
-	}
-	#thisweek .col-md-1.status-cancelled, #nextweek .col-md-1.status-cancelled{
-		border: 1px solid #e74c3c;
-		background-color: #FADBD8;
-		color: #e74c3c;
-	}
-	#thisweek .col-md-1.status-cancelled:hover, #nextweek .col-md-1.status-cancelled:hover{
-		border: 1px solid #B93D30;
-		color: #B93D30;
 		cursor: pointer;
 	}
 	#thisweek .col-md-1.locked, #nextweek .col-md-1.locked, #thisweek .col-md-1.locked:hover, #nextweek .col-md-1.locked:hover{
@@ -749,6 +763,25 @@
 		border: 1px solid #ccc;
 		color: #999;
 		cursor: default;
+		-webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+		-moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+		box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+	}
+	#thisweek .col-md-1.status-cancelled, #nextweek .col-md-1.status-cancelled {
+		border: 1px solid #e74c3c;
+		background-color: #FADBD8;
+		color: #e74c3c;
+		-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+		box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+	}
+	#thisweek .col-md-1.status-cancelled:hover, #nextweek .col-md-1.status-cancelled:hover{
+		border: 1px solid #B93D30;
+		color: #B93D30;
+		cursor: pointer;
+	}
+	.car-slot-status-unassigned {
+		background-color: #727c7a;
 	}
 
 /* End Car Slots */

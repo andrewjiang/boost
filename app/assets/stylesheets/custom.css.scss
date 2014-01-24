@@ -122,11 +122,9 @@
 	}
 
 	.tagline{
-			color: #999;
-			margin: -10px 0px 5px 0px;
+		color: #999;
+		margin: -10px 0px 5px 0px;
 	}
-
-
 
 	.mainpage{
 		padding-right: 50px;
@@ -147,7 +145,7 @@
 	  padding-bottom:150px; /* this needs to be bigger than footer height*/
 	}
 	.footer {
-	  	background-color: #272727;
+  	background-color: #272727;
 		min-height: 200px;
 		position: relative;
 		width:100%;
@@ -653,12 +651,15 @@
 	}
 	.ephemeral{
 		position: absolute;
-		top: 0px;
-		width: 100%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		width: 600px;
 		opacity: 40%;
 		font-size: 16px;
 		font-weight: 600;
 		height: 60px;
+		text-align: center;
 	}
 
 /* End Driver Application */

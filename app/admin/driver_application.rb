@@ -54,11 +54,7 @@ ActiveAdmin.register DriverApplication do
       end
 
       attributes_table_for(stage) do
-        rows :notes, :fit_score, :pass, :reason_if_fail, :clean_driving_record, :commitments, :max_availability
-        row 'Partner? (0=Solo, 1=Partner' do
-          stage.num_partners
-        end
-        row :reservation_fee
+        rows :notes, :fit_score, :pass, :reason_if_fail, :clean_driving_record, :commitments, :max_availability, :num_partners, :reservation_fee
         row 'Payment Type: options are "credit card", "debit card", "paypal"' do
           stage.payment_type
         end

@@ -10,11 +10,29 @@ ActiveAdmin.register ActivationStage do
 
   show do |stage|
     attributes_table do
-      exclude_unnecessary_fields(ActivationStage.column_names).each do |f|
-        row f.to_sym
-      end
+      row :notes
+      row :car_received
+      row :uber
+      row :lyft
+      row :sidecar
+      row :partner_email
+      row :schedule
+      row :swaps
     end
-    active_admin_comments
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :notes
+      f.input :car_received
+      f.input :uber
+      f.input :lyft
+      f.input :sidecar
+      f.input :partner_email
+      f.input :schedule
+      f.input :swaps
+      f.actions
+    end
   end
 
 end

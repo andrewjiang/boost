@@ -14,7 +14,6 @@ ActiveAdmin.register ApplicationStage do
       row :phone_screen_status
       row :meets_hard_requirements
     end
-    active_admin_comments
   end
 
   form do |f|

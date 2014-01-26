@@ -10,11 +10,21 @@ ActiveAdmin.register OnboardingStage do
 
   show do |stage|
     attributes_table do
-      exclude_unnecessary_fields(OnboardingStage.column_names).each do |f|
-        row f.to_sym
-      end
+      row :notes
+      row :signed
+      row :email_forwarding
+      row :referral_email
     end
-    active_admin_comments
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :notes
+      f.input :signed
+      f.input :email_forwarding
+      f.input :referral_email
+      f.actions
+    end
   end
 
 end

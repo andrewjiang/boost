@@ -26,7 +26,6 @@ ActiveAdmin.register PhoneScreenStage do
         end
       row :scheduling_email
     end
-    active_admin_comments
   end
 
   form do |f|

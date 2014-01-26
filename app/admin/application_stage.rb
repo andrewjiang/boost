@@ -10,11 +10,20 @@ ActiveAdmin.register ApplicationStage do
 
   show do |stage|
     attributes_table do
-      exclude_unnecessary_fields(ApplicationStage.column_names).each do |f|
-        row f.to_sym
-      end
+      row :notes
+      row :phone_screen_status
+      row :meets_hard_requirements
     end
     active_admin_comments
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :notes
+      f.input :phone_screen_status
+      f.input :meets_hard_requirements
+      f.actions
+    end
   end
 
 end

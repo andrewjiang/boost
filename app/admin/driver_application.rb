@@ -53,7 +53,9 @@ ActiveAdmin.register DriverApplication do
       attributes_table_for(stage) do
         row :notes
         row :fit_score
-        row :pass
+        row 'Pass?' do
+          stage.pass
+        end
         row :reason_if_fail
         row :clean_driving_record
         row :commitments

@@ -76,22 +76,18 @@
 		border: 1px solid #333;
 		border-radius: 0px;
 	}
-  #header-signin{
-    color: #777;
-    font-weight: 700;
-    font-size: 16px;
-  }
-  #header-signin:hover{
-    color: #555;
-  }
-  .header-signedin{
-    color: #777;
-    font-weight: 700;
-    font-size: 16px;
-  }
-  .header-signedin:hover{
-    color: #555;
-  }
+	#header-signin{
+	    color: #777;
+	    font-weight: 700;
+	    font-size: 16px;
+	    padding-top: 14px;
+	    padding-bottom: 14px;
+	    display: inline-block;
+	}
+	#header-signin:hover{
+	    color: #999;
+	    cursor: pointer;
+	}
 	#header-list-car{
 		color: rgba(22, 160, 133, 0.8);
 		font-weight: 700;
@@ -106,7 +102,13 @@
 		color: rgba(29, 147, 221, 0.8);
 	}
 	#header-CTA:hover{
-		color: rgb(23, 118, 177);
+		color: rgba(29, 147, 221, 1);
+	}
+	.dropdown-menu{
+		padding: 10px;
+		border: 1px solid #e2e2e2;
+		border-radius: 5px;
+		text-align: left;
 	}
 	a.dropdown-toggle{
 		color:#555;

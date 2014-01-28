@@ -35,13 +35,21 @@
                 <span class="dropdown-toggle CTA" id="header-signin" data-toggle="dropdown">
                   Login <span class="caret"></span>
                 </span>
-                <ul class="dropdown-menu" role="menu">
+                <ul class="dropdown-menu pull-right" role="menu">
                   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-                    <%= f.email_field :email, class: "form-control", placeholder: "Email", :autofocus => true %>
-                    <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+                    <li class="form-group">
+                      <%= f.email_field :email, class: "form-control", placeholder: "Email", :autofocus => true %>
+                    </li>
+                    <li class="form-group">
+                      <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+                    </li>
                     <li class="divider"></li>
-                    <%= f.submit "Sign in", class: "btn btn-primary btn-block" %>
-                    <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+                    <li class="form-group">
+                      <%= f.submit "Sign in", class: "btn btn-primary btn-block" %>
+                    </li>
+                    <li class="form-alt-link">
+                      <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+                    </li>
                   <% end %>
                 </ul> 
               </li>

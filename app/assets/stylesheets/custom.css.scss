@@ -105,11 +105,20 @@
 		color: rgba(29, 147, 221, 1);
 	}
 	.dropdown-menu{
-		padding: 10px;
 		border: 1px solid #e2e2e2;
 		border-radius: 5px;
-		text-align: left;
+	}
+	.dropdown-menu.signed-out{
+		padding: 10px;
 		width: 250px;
+	}
+	.dropdown-menu.signed-in{
+		padding: 10px 0 10px 0;
+		width: 160px;
+	}
+	.dropdown-menu.signed-in input{
+		border-radius: 0;
+		border-width: 0;
 	}
 	a.dropdown-toggle{
 		color:#555;

@@ -12,10 +12,11 @@ ActiveAdmin.register DriverApplication do
     column :last_name
     column :resume do |resource|
       link_to "Resume", resource.resume.url
-    end 
+    end
     column :drivers_license do |resource|
       link_to "Driver's License", resource.drivers_license.url
-    end 
+    end
+    column :created_at
     column :facebook_link
     column :phone_number
     column :email
@@ -42,6 +43,7 @@ ActiveAdmin.register DriverApplication do
       row :drivers_license do
         link_to driver_application.drivers_license_file_name, driver_application.drivers_license.url
       end
+      row :created_at
       row :facebook_link
       row :phone_number
       row :email

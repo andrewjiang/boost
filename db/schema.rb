@@ -93,25 +93,6 @@ ActiveRecord::Schema.define(version: 20140124095420) do
     t.datetime "car_picture_updated_at"
   end
 
-  create_table "car_slots", force: true do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.integer  "user_id"
-    t.string   "status"
-    t.decimal  "fee",        precision: 8, scale: 2
-  end
-
-  add_index "car_slots", ["user_id"], name: "user_idx"
-
-  create_table "cars", force: true do |t|
-    t.string  "make"
-    t.string  "model"
-    t.string  "color"
-    t.integer "year"
-    t.string  "vin"
-    t.string  "license_number"
-  end
-
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
@@ -192,15 +173,8 @@ ActiveRecord::Schema.define(version: 20140124095420) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "phone_number"
-    t.string   "address"
-    t.string   "zip_code"
-    t.integer  "car_id"
   end
 
-  add_index "users", ["car_id"], name: "car_id_idx"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 

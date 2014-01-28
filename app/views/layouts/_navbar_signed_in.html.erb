@@ -1,0 +1,13 @@
+<div class="collapse navbar-collapse" id="navbar-collapse">
+  <ul class="nav navbar-nav">
+    <li>
+      <%= link_to("Driving schedule", schedule_path, class: "header-signedin") %>
+    </li>
+    <li>
+      <%= link_to(destroy_user_session_path, method: "delete", class: "header-signedin") do %>
+        <span class="glyphicon glyphicon-cog"></span>
+        <b class="caret"></b>
+      <% end %>
+    </li>
+  </ul>
+</div>

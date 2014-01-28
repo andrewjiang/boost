@@ -1,8 +1,31 @@
 ActiveAdmin.register DriverApplication do
+
   controller do
     def permitted_params
       params.permit!
     end
+  end
+
+  index do
+    id_column
+    column :first_name
+    column :last_name
+    column :resume do |resource|
+      link_to "Resume", resource.resume.url
+    end 
+    column :drivers_license do |resource|
+      link_to "Driver's License", resource.drivers_license.url
+    end 
+    column :facebook_link
+    column :phone_number
+    column :email
+    column :address
+    column :zip_code
+    column :drive_days_per_week
+    column :parking_pref
+    column :referred_by
+    column :referral_emails
+    column :partner_emails
   end
 
   show do |driver_application|
@@ -13,6 +36,12 @@ ActiveAdmin.register DriverApplication do
       row :created_at
       row :first_name
       row :last_name
+      row :resume do
+        link_to driver_application.resume_file_name, driver_application.resume.url
+      end
+      row :drivers_license do
+        link_to driver_application.drivers_license_file_name, driver_application.drivers_license.url
+      end
       row :facebook_link
       row :phone_number
       row :email
@@ -23,12 +52,6 @@ ActiveAdmin.register DriverApplication do
       row :referred_by
       row :referral_emails
       row :partner_emails
-      row :resume do
-        link_to driver_application.resume_file_name, driver_application.resume.url
-      end
-      row :drivers_license do
-        link_to driver_application.drivers_license_file_name, driver_application.drivers_license.url
-      end
     end
 
     panel "Application Stage" do

@@ -146,10 +146,10 @@
 
           <div class="row application-row">
             <div class="col-md-12">
-              <%= f.label :referral_code, "Referral code / referred by:", class: "control-label" %>
+              <%= f.label :referral_code, "Referral code / referred by (OPTIONAL):", class: "control-label" %>
             </div>
             <div class="col-md-12">
-              <%= f.text_field :referral_code, class: "form-control", placeholder: "Enter a referral code or the name of the person who referred you" %>
+              <%= f.text_field :referral_code, class: "form-control", placeholder: "Enter the referral code or the name of the person who referred you" %>
               <% if f.object.errors.include?(:referral_code) %>
                 <%= f.label :referral_code, "Please enter a value", class: "error" %>
               <% end %>

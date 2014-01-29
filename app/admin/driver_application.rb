@@ -25,6 +25,7 @@ ActiveAdmin.register DriverApplication do
     column :drive_days_per_week
     column :parking_pref
     column :referred_by
+    column :referred_by_email
     column :referral_emails
     column :partner_emails
   end
@@ -52,6 +53,7 @@ ActiveAdmin.register DriverApplication do
       row :drive_days_per_week
       row :parking_pref
       row :referred_by
+      row :referred_by_email
       row :referral_emails
       row :partner_emails
     end

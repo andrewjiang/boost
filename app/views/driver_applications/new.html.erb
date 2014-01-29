@@ -136,7 +136,8 @@
               <%= f.label "How'd you hear about us?", for: "select_referred_by", class: "control-label" %>
             </div>
             <div class="col-md-12">
-              <%= select_tag "select_referred_by", options_for_select([["Select an answer", nil], "Craigslist", "Facebook", "Friend", "Other"]), class:  "form-control", onchange: 'setReferredBy(this.value);' %>
+              <%= select_tag "select_referred_by", options_for_select([["Select an answer", nil], "Referred by a friend", "Craigslist", "Facebook", "Other"]), class:  "form-control", onchange: 'setReferredBy(this.value);' %>
+              <%= f.email_field :referred_by_email, id: "referredByEmail", style: "display:none", class: "form-control", placeholder: "Please provide your friend's email address" %>
               <%= f.text_field :referred_by, id: "referredByOther", style: "display:none", class: "form-control", placeholder: "Please provide referral details" %>
               <% if f.object.errors.include?(:referred_by) %>
                 <%= f.label :referred_by, "Please select or enter a value", class: "error" %>

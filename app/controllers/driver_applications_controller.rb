@@ -34,6 +34,7 @@ class DriverApplicationsController < ApplicationController
           :resume,
           :drivers_license,
           :referred_by,
+          :referred_by_email,
           :referral_email_0,
           :referral_email_1,
           :referral_email_2,

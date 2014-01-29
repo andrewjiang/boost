@@ -1,21 +1,11 @@
 function setReferredBy(val) {
-  var referredByEmail = document.getElementById('referredByEmail');
   var referredByOther = document.getElementById('referredByOther');
   if (val==="Other") {
-    referredByEmail.value = "";
-    referredByEmail.style.display = 'none';
     referredByOther.value = "";
-    referredByOther.style.display = 'block';
-  } else if (val==="Referred by a friend") {
-    referredByOther.value = val;
-    referredByOther.style.display = 'none';
-    referredByEmail.value = "";
-    referredByEmail.style.display = 'block';
+    referredByOther.style.display='block';
   } else {
     referredByOther.value = val;
-    referredByOther.style.display = 'none';
-    referredByEmail.value = "";
-    referredByEmail.style.display = 'none';
+    referredByOther.style.display='none';
   }
 }
 

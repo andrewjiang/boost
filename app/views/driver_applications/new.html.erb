@@ -136,11 +136,22 @@
               <%= f.label "How'd you hear about us?", for: "select_referred_by", class: "control-label" %>
             </div>
             <div class="col-md-12">
-              <%= select_tag "select_referred_by", options_for_select([["Select an answer", nil], "Referred by a friend", "Craigslist", "Facebook", "Other"]), class:  "form-control", onchange: 'setReferredBy(this.value);' %>
-              <%= f.email_field :referred_by_email, id: "referredByEmail", style: "display:none", class: "form-control", placeholder: "Please provide your friend's email address" %>
+              <%= select_tag "select_referred_by", options_for_select([["Select an answer", nil], "Craigslist", "Facebook", "Friend", "Other"]), class:  "form-control", onchange: 'setReferredBy(this.value);' %>
               <%= f.text_field :referred_by, id: "referredByOther", style: "display:none", class: "form-control", placeholder: "Please provide referral details" %>
               <% if f.object.errors.include?(:referred_by) %>
                 <%= f.label :referred_by, "Please select or enter a value", class: "error" %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row application-row">
+            <div class="col-md-12">
+              <%= f.label :referral_code, "Referral code / referred by:", class: "control-label" %>
+            </div>
+            <div class="col-md-12">
+              <%= f.text_field :referral_code, class: "form-control", placeholder: "Enter a referral code or the name of the person who referred you" %>
+              <% if f.object.errors.include?(:referral_code) %>
+                <%= f.label :referral_code, "Please enter a value", class: "error" %>
               <% end %>
             </div>
           </div>

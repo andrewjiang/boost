@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129050445) do
+ActiveRecord::Schema.define(version: 20140129071303) do
 
   create_table "activation_stages", force: true do |t|
     t.boolean "car_received"
@@ -152,7 +152,7 @@ ActiveRecord::Schema.define(version: 20140129050445) do
     t.string   "referral_emails"
     t.string   "partner_emails"
     t.string   "stage"
-    t.string   "referred_by_email"
+    t.string   "referral_code"
   end
 
   create_table "onboarding_stages", force: true do |t|

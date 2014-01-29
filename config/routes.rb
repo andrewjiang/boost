@@ -6,8 +6,9 @@ Zephyr::Application.routes.draw do
   resources :driver_applications, only: [:new, :create, :destroy]
 
   root 'home#index'
-  match '/list',  to: 'car_listings#new',        via: 'get'
-  match '/drive', to: 'driver_applications#new', via: 'get'
+  match '/list',            to: 'car_listings#new',              via: 'get'
+  match '/drive',           to: 'driver_applications#new',       via: 'get'
+  match '/drive_submitted', to: 'driver_applications#submitted', via: 'get'
 
   if Rails.env.development?
     mount MailPreview => 'mail_view'

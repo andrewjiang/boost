@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :car
-  has_many :car_slots
+  has_many   :car_slots
 
   # Array of day names taken from Date::DAYNAMES. e.g. [ "Monday", "Wednesday", "Friday" ]
   serialize :default_car_schedule, JSON
@@ -30,5 +30,9 @@ class User < ActiveRecord::Base
         CarSlot.create(:user => self, :start_time => d, :end_time => d.end_of_day(), :status => CarSlot::UNASSIGNED)
       end
     end
+  end
+
+  def car_slots_ordered(start_time, num_slots)
+    self.car_slots.where("start_time >= ? AND end_time <= ?", start_time, start_time.advance(:days => +num_slots)).order(:start_time)
   end
 end

@@ -12,7 +12,7 @@
   					<%= link_to image_tag("profile-xx.png", class: "profile-pic"), profile_path %>
   				</div>
   				<div class="col-xs-6">
-  					<h3>You: <span class="flatgreen"><%= current_user.full_name %> </span></h3>
+  					<h3>You: <br /> <span class="flatgreen"><%= current_user.full_name %> </span></h3>
   					<h5>Drives <%= current_user.default_car_schedule.join(", ") %></h5>
   					<h5><%= current_user.phone_number %></h5>
   					<a href="mailto:<%= current_user.email %>"><h5><%= current_user.email %></h5></a>
@@ -32,7 +32,7 @@
     					<%= link_to image_tag("profile-xy.png", class: "profile-pic"), profile_path %>
     				</div>
     				<div class="col-xs-6">
-    					<h3>Partner: <span class="flatorange"><%= @partner.full_name %></span></h3>
+    					<h3>Partner: <br /> <span class="flatorange"><%= @partner.full_name %></span></h3>
     					<h5>Drives <%= @partner.default_car_schedule.join(", ") %></h5>
     					<h5><%= @partner.phone_number %></h5>
     					<a href="mailto:<%= @partner.email %>"><h5><%= @partner.email %></h5></a>

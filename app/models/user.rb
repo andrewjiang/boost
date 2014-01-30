@@ -5,18 +5,10 @@ class User < ActiveRecord::Base
   belongs_to :car
   has_many   :car_slots
 
-  # Array of day names taken from Date::DAYNAMES. e.g. [ "Monday", "Wednesday", "Friday" ]
+  # Array of day names taken from User::DAYNAMES. e.g. [ "Monday", "Wednesday", "Friday" ]
   serialize :default_car_schedule, JSON
 
-  @@week_offset_to_day_name = {
-    0 => "Monday",
-    1 => "Tuesday",
-    2 => "Wednesday",
-    3 => "Thursday",
-    4 => "Friday",
-    5 => "Saturday",
-    6 => "Sunday"
-  }
+  DAYNAMES = [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ]
 
   # Creates and saves car slots for the whole week that the given ref time falls under
   def create_default_car_slots(ref_time_for_week)
@@ -24,7 +16,7 @@ class User < ActiveRecord::Base
     week_begin = ref_time_for_week.beginning_of_week
     for week_offset in 0..6
       d = week_begin.advance(:days => +week_offset)
-      if days_in_schedule.include?(@@week_offset_to_day_name[week_offset])
+      if days_in_schedule.include?(DAYNAMES[week_offset])
         CarSlot.create(:user => self, :start_time => d, :end_time => d.end_of_day(), :status => CarSlot::RESERVED)
       else
         CarSlot.create(:user => self, :start_time => d, :end_time => d.end_of_day(), :status => CarSlot::UNASSIGNED)

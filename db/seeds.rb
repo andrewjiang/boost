@@ -28,7 +28,7 @@ if Rails.env == 'development'
     :phone_number         => "123-456-7891",
     :address              => "123 Market St., San Francisco, CA",
     :password             => "password",
-    :default_car_schedule => Date::DAYNAMES.values_at(*[0, 2, 4, 5]),
+    :default_car_schedule => User::DAYNAMES.values_at(*[0, 2, 4, 5]),
     :car                  => car_1
   )
 
@@ -39,7 +39,7 @@ if Rails.env == 'development'
     :phone_number         => "912-1316-1232",
     :address              => "631 Folsom St., San Francisco, CA",
     :password             => "password",
-    :default_car_schedule => Date::DAYNAMES.values_at(*[1, 3, 6]),
+    :default_car_schedule => User::DAYNAMES.values_at(*[1, 3, 6]),
     :car                  => car_1
   )
 
@@ -62,7 +62,7 @@ if Rails.env == 'development'
     :phone_number         => "534-435-7479",
     :address              => "400 Howard St., San Francisco, CA",
     :password             => "password",
-    :default_car_schedule => Date::DAYNAMES.values_at(*[1, 2, 3, 6]),
+    :default_car_schedule => User::DAYNAMES.values_at(*[1, 2, 3, 6]),
     :car                  => car_2
   )
 

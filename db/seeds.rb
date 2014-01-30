@@ -43,9 +43,30 @@ if Rails.env == 'development'
     :car                  => car_1
   )
 
-
   car_1.create_default_car_slots(DateTime.current)
   car_1.create_default_car_slots(DateTime.current.advance(:weeks => +1))
 
+  car_2 = Car.create(
+    :make           => "Toyota",
+    :model          => "Prius",
+    :color          => "White",
+    :year           => 2010,
+    :vin            => "4KDK868C_808VDUE9",
+    :license_number => "8KH7HG7"
+  )
+
+  carol = User.create(
+    :email                => "carol@example.com",
+    :first_name           => "Carol",
+    :last_name            => "Witherspoon",
+    :phone_number         => "534-435-7479",
+    :address              => "400 Howard St., San Francisco, CA",
+    :password             => "password",
+    :default_car_schedule => Date::DAYNAMES.values_at(*[1, 2, 3, 6]),
+    :car                  => car_2
+  )
+
+  car_2.create_default_car_slots(DateTime.current)
+  car_2.create_default_car_slots(DateTime.current.advance(:weeks => +1))
 
 end

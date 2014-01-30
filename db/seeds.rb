@@ -10,50 +10,44 @@ if Rails.env == 'development'
 
   User.destroy_all
   CarSlot.destroy_all
+  Car.destroy_all
+
+  car_1 = Car.create(
+    :make           => "Honda",
+    :model          => "Accord",
+    :color          => "Blue",
+    :year           => 2008,
+    :vin            => "1M8GDM9A_KP042788",
+    :license_number => "4DKE21KT"
+  )
 
   alice = User.create(
-    :email => "alice@example.com", 
-    :first_name => "Alice",
-    :last_name => "Summers",
-    :phone_number => "123-456-7891", 
-    :address => "123 Market St., San Francisco, CA", 
-    :password => "password")
+    :email                => "alice@example.com",
+    :first_name           => "Alice",
+    :last_name            => "Summers",
+    :phone_number         => "123-456-7891",
+    :address              => "123 Market St., San Francisco, CA",
+    :password             => "password",
+    :default_car_schedule => Date::DAYNAMES.values_at(*[0, 2, 4, 5]),
+    :car                  => car_1
+  )
 
   bob = User.create(
-    :email => "bob@example.com", 
-    :first_name => "Bob",
-    :last_name => "Marley",
-    :phone_number => "912-1316-1232", 
-    :address => "631 Folsom St., San Francisco, CA", 
-    :password => "password")
+    :email                => "bob@example.com",
+    :first_name           => "Bob",
+    :last_name            => "Marley",
+    :phone_number         => "912-1316-1232",
+    :address              => "631 Folsom St., San Francisco, CA",
+    :password             => "password",
+    :default_car_schedule => Date::DAYNAMES.values_at(*[1, 3, 6]),
+    :car                  => car_1
+  )
 
-  d = DateTime.current.at_beginning_of_week
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => alice.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => alice.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => bob.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => bob.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => alice.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => bob.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => alice.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => alice.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => alice.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => bob.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => bob.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => alice.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => bob.id, :status => 'reserved', :fee => 50)
-  d = d.advance(:days => +1)
-  CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => alice.id, :status => 'reserved', :fee => 50)
+
+  alice.create_default_car_slots(DateTime.current)
+  alice.create_default_car_slots(DateTime.current.advance(:weeks => +1))
+  bob.create_default_car_slots(DateTime.current)
+  bob.create_default_car_slots(DateTime.current.advance(:weeks => +1))
+
 
 end

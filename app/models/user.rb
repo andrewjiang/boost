@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
     for week_offset in 0..6
       d = week_begin.advance(:days => +week_offset)
       if days_in_schedule.include?(@@week_offset_to_day_name[week_offset])
-        CarSlot.create(:start_time => d, :end_time => d.end_of_day(), :user_id => self.id, :status => 'reserved', :fee => 50)
+        CarSlot.create(:user => self, :start_time => d, :end_time => d.end_of_day(), :status => 'reserved')
       end
     end
   end

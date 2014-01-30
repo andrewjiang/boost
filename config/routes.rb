@@ -12,6 +12,7 @@ Zephyr::Application.routes.draw do
   match '/drive',     to: 'driver_applications#new', via: 'get'
   match '/dashboard', to: 'dashboard#show',          via: 'get'
   match '/schedule',  to: 'schedule#show',           via: 'get'
+  match '/profile',   to: 'profile#show',            via: 'get'
 
   if Rails.env.development?
     mount MailPreview => 'mail_view'

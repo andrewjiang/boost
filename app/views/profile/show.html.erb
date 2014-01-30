@@ -1,7 +1,7 @@
 <div class="container-fluid lgray-bkg top-fluid">
   <div class="container segment-top">
   	<center>
-      <h2>Alice's Profile</h2>
+      <h2><%= current_user.first_name %>'s Profile</h2>
     </center>
   </div>
   <div class="container segment-bottom">
@@ -12,10 +12,10 @@
   					<%= link_to image_tag("profile-xx.png", class: "profile-pic"), '/profile' %>
   				</div>
   				<div class="col-xs-6">
-  					<h3>You: <span class="flatgreen">Alice E.</span></h3>
-  					<h5>Drives Mon, Tues, and Fri</h5>
-  					<h5>(646) 709-7739</h5>
-  					<a href="mailto:alice@zephyrcar.com"><h5>alice@zephyrcar.com</h5></a>
+  					<h3>You: <span class="flatgreen"><%= current_user.full_name %> </span></h3>
+  					<h5>Drives <%= current_user.default_car_schedule.join(", ") %></h5>
+  					<h5><%= current_user.phone_number %></h5>
+  					<a href="mailto:<%= current_user.email %>"><h5><%= current_user.email %></h5></a>
   				</div>
   			</div>
   			<div class="row driver-info">
@@ -23,10 +23,10 @@
   					<%= link_to image_tag("profile-xy.png", class: "profile-pic"), '/profile' %>
   				</div>
   				<div class="col-xs-6">
-  					<h3>Partner: <span class="flatorange">Bob E.</span></h3>
-  					<h5>Drives Wed, Thurs, Sat, and Sun</h5>
-  					<h5>(555) 555-5555</h5>
-  					<a href="mailto:bob@zephyrcar.com"><h5>bob@zephyrcar.com</h5></a>
+  					<h3>Partner: <span class="flatorange"><%= @partner.full_name %></span></h3>
+  					<h5>Drives <%= @partner.default_car_schedule.join(", ") %></h5>
+  					<h5><%= @partner.phone_number %></h5>
+  					<a href="mailto:<%= @partner.email %>"><h5><%= @partner.email %></h5></a>
   				</div>
   			</div>
   		</div>

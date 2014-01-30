@@ -32,7 +32,18 @@ class User < ActiveRecord::Base
     end
   end
 
+  # Returns an array consisting of the first num_slots car slots for this user starting at the given start time
   def car_slots_ordered(start_time, num_slots)
     self.car_slots.where("start_time >= ? AND end_time <= ?", start_time, start_time.advance(:days => +num_slots)).order(:start_time)
+  end
+
+  # Returns the user's driving partner
+  def partner
+    partners = self.car.users - [self]
+    partners.empty? ? nil : partners[0]
+  end
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
   end
 end

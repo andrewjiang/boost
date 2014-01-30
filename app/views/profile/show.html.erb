@@ -9,7 +9,11 @@
   		<div class="col-md-4 col-md-offset-2">
   			<div class="row driver-info">
   				<div class="col-xs-6">
-  					<%= link_to image_tag("profile-xx.png", class: "profile-pic"), profile_path %>
+            <% if current_user.male? %>
+  					  <%= link_to image_tag("profile-xy.png", class: "profile-pic"), profile_path %>
+            <% else %>
+              <%= link_to image_tag("profile-xx.png", class: "profile-pic"), profile_path %>
+            <% end %>
   				</div>
   				<div class="col-xs-6">
   					<h3>You: <br /> <span class="flatgreen"><%= current_user.full_name %> </span></h3>
@@ -29,7 +33,11 @@
             </div>
           <% else %>
     				<div class="col-xs-6">
-    					<%= link_to image_tag("profile-xy.png", class: "profile-pic"), profile_path %>
+    					<% if @partner.male? %>
+                <%= link_to image_tag("profile-xy.png", class: "profile-pic"), profile_path %>
+              <% else %>
+                <%= link_to image_tag("profile-xx.png", class: "profile-pic"), profile_path %>
+              <% end %>
     				</div>
     				<div class="col-xs-6">
     					<h3>Partner: <br /> <span class="flatorange"><%= @partner.full_name %></span></h3>

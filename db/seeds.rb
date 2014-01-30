@@ -44,10 +44,8 @@ if Rails.env == 'development'
   )
 
 
-  alice.create_default_car_slots(DateTime.current)
-  alice.create_default_car_slots(DateTime.current.advance(:weeks => +1))
-  bob.create_default_car_slots(DateTime.current)
-  bob.create_default_car_slots(DateTime.current.advance(:weeks => +1))
+  car_1.create_default_car_slots(DateTime.current)
+  car_1.create_default_car_slots(DateTime.current.advance(:weeks => +1))
 
 
 end

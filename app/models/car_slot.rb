@@ -17,11 +17,6 @@ class CarSlot < ActiveRecord::Base
     self.start_time.to_formatted_s(:car_slot)
   end
 
-  # Returns a formatted time identifier for the given time
-  def self.time_label(start_time)
-    start_time.to_formatted_s(:car_slot)
-  end
-
   # Returns the formatted fee 
   def fee_label
     if self.fee == 0

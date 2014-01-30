@@ -51,8 +51,9 @@
 /* Base CSS */
 	body{
 		background-color: #FAFBFC;
-		font-family: 'Arial';
+		font-family: 'Open Sans', 'Arial';
 		color: #333;
+		font-size: 14;
 	}
 	.navbar {
 	    margin-bottom: 0 !important;
@@ -74,7 +75,32 @@
 	}
 	nav.navbar.navbar-default{
 		border: 1px solid #333;
-		border-radius: 0px;
+		border-radius: 4px;
+	}
+	#nav-dropdown li .btn{
+		text-align: left;
+		padding: 10px 10px;
+		border-top: 1px solid #e5e5e5;
+		font-size: 16px;
+	}
+	#arrow-up{
+		width: 0; 
+		height: 0; 
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid #e5e5e5;
+		position: absolute;
+		right: 20px;
+		top: -10px;
+	}
+	#nav-dropdown{
+		padding: 0px;
+		width: 150px;
+		border-radius: 4px !important;
+		margin-top: 2px;
+	}
+	#signed-in-dropdown{
+		background-color: #222;
 	}
 	#header-signin{
 	    color: #777;

@@ -1,18 +1,28 @@
 <div class="collapse navbar-collapse" id="navbar-collapse">
   <ul class="nav navbar-nav">
     <li>
-      <%= link_to("Driving schedule", schedule_path) %>
+      <%= link_to("Driving schedule", schedule_path, id: "header-CTA") %>
     </li>
     <li>
-      <a href="#" data-toggle="dropdown">
+      <a href="#" data-toggle="dropdown" id="signed-in-dropdown">
         <span class="glyphicon glyphicon-cog"></span>
         <b class="caret"></b>
       </a>
       
-      <ul class="dropdown-menu signed-in pull-right" role="menu">
+      <ul class="dropdown-menu signed-in pull-right" id="nav-dropdown" role="menu">
+        <b id="arrow-up"></b>
         <li>
+          <%= button_to "Profile", destroy_user_session_path, method: "delete", class: "btn btn-default btn-block" %>
+        </li>
+        
+        <li>
+          <%= button_to "Settings", destroy_user_session_path, method: "delete", class: "btn btn-default btn-block" %>
+        </li>
+        <li>
+
           <%= button_to "Sign out", destroy_user_session_path, method: "delete", class: "btn btn-default btn-block" %>
         </li>
+
       </ul>
     </li>
   </ul>

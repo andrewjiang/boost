@@ -12,11 +12,11 @@
       <ul class="dropdown-menu signed-in pull-right" id="nav-dropdown" role="menu">
         <b id="arrow-up"></b>
         <li>
-          <%= button_to "Profile", destroy_user_session_path, method: "delete", class: "btn btn-default btn-block" %>
+          <%= link_to "Profile", "/profile", class: "btn btn-default btn-block" %>
         </li>
         
         <li>
-          <%= button_to "Settings", destroy_user_session_path, method: "delete", class: "btn btn-default btn-block" %>
+          <%= link_to "Settings", "/settings", class: "btn btn-default btn-block" %>
         </li>
         <li>
 

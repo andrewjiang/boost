@@ -75,13 +75,16 @@
 	}
 	nav.navbar.navbar-default{
 		border: 1px solid #333;
-		border-radius: 4px;
+		border-radius: 0px;
 	}
 	#nav-dropdown li .btn{
 		text-align: left;
 		padding: 10px 10px;
 		border-top: 1px solid #e5e5e5;
 		font-size: 16px;
+		border-left: none;
+		border-right: none;
+		border-bottom: none;
 	}
 	#arrow-up{
 		width: 0; 
@@ -707,7 +710,6 @@
 		height: 60px;
 		text-align: center;
 	}
-
 /* End Driver Application */
 
 /* Car Slots */
@@ -830,7 +832,75 @@
 	.car-slot-status-unassigned {
 		background-color: #727c7a;
 	}
-
 /* End Car Slots */
 
+/* User Profile CSS */
+	.profile-pic{
+		border-radius: 50%;
+		height: 140px;
+		width: 140px;
+		border: 4px solid #555;
+		padding: 5px;
+		opacity: 0.8;
+	}
+	.driver-info{
+		margin-bottom: 20px;
+		color: #555;
+	}
+/* End User Profile CSS */
 
+/* Sticky Note CSS */
+	#notes li {
+	    position: relative;
+	    width: 100%;
+	    min-height: 100px;
+	    margin: 25px auto;
+	    padding: 60px 15px 15px 15px;
+	    background: #FCF0AD;
+	    -webkit-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+	    -moz-box-shadow: 0 2px 12px rgba(0,0,0,.5);
+	    box-shadow: 0 1px 2px #000;
+	    -webkit-transform: rotate(-.5deg);
+	    -moz-transform: rotate(-.5deg);
+	    -o-transform: rotate(-.5deg);
+	}
+
+	#notes li:nth-child(even) {
+	    -webkit-transform: rotate(.5deg);
+	    -moz-transform: rotate(.5deg);
+	    -o-transform: rotate(.5deg);
+	}
+
+	#notes li p {
+	    text-align: center;
+	    font: normal normal normal 34px/40px 'Reenie Beanie', Helvetica, Arial, sans-serif;
+	    color: #000;
+	    text-shadow: white 1px 1px 0px;
+	    overflow:hidden;
+	}
+
+	#notes li::before {
+	    content: ' ';
+	    display: block;
+	    position: absolute;
+	    left: 115px;
+	    top: -15px;
+	    width: 75px;
+	    height: 25px;
+	    z-index: 2;
+	    background-color: rgba(243,245,228,0.5);
+	    border: 2px solid rgba(255,255,255,0.5);
+	    -webkit-box-shadow: 0 0 5px #888;
+	    -moz-box-shadow: 0 0 5px #888;
+	    box-shadow: 2px 2px 2px #000;
+	    -webkit-transform: rotate(-6deg);
+	    -moz-transform: rotate(-6deg);
+	    -o-transform: rotate(-6deg);
+	}
+
+	#notes li:nth-child(even)::before {
+	    -webkit-transform: rotate(6deg);
+	    -moz-transform: rotate(6deg);
+	    -o-transform: rotate(6deg);
+	}
+/* End Sticky Note CSS */

@@ -22,7 +22,7 @@ class CarSlot < ActiveRecord::Base
     if self.fee == 0
       "$0"
     else
-      "$%05.2f" % self.fee
+      "$%d" % self.fee
     end
   end
 

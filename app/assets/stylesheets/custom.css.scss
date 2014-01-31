@@ -95,6 +95,11 @@
 		border-right: none;
 		border-bottom: none;
 	}
+	.navbar-toggle{
+		margin-left: auto;
+		margin-right: auto;
+		float: none !important;
+	}
 	#arrow-up{
 		width: 0; 
 		height: 0; 
@@ -246,9 +251,11 @@
 		color: #aaa;
 	}
 
-  label.error{
-    color:#DA6565;
-  }
+	label.error{
+	    color:#DA6565;
+	}
+	@media (max-width: 991px){
+	}
 /* End Base CSS */
 
 /* Home CSS */
@@ -859,6 +866,9 @@
 		margin-bottom: 20px;
 		color: #555;
 	}
+	.driver-info img{
+		margin-top: 20px;
+	}
 /* End User Profile CSS */
 
 /* Sticky Note CSS */
@@ -914,5 +924,13 @@
 	    -webkit-transform: rotate(6deg);
 	    -moz-transform: rotate(6deg);
 	    -o-transform: rotate(6deg);
+	}
+	@media (max-width: 991px){
+		#notes{
+			padding: 10px 30px;
+		}
+		.driver-info{
+			padding: 0px 30px;
+		}
 	}
 /* End Sticky Note CSS */

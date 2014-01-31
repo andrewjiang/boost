@@ -60,8 +60,6 @@ ActiveRecord::Schema.define(version: 20140130101503) do
 
   create_table "application_stages", force: true do |t|
     t.string   "phone_screen_status"
-    t.integer  "quiz_score"
-    t.boolean  "facebook_like"
     t.boolean  "meets_hard_requirements"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -153,6 +151,8 @@ ActiveRecord::Schema.define(version: 20140130101503) do
     t.string   "referred_by"
     t.string   "referral_emails"
     t.string   "partner_emails"
+    t.string   "stage"
+    t.string   "referral_code"
   end
 
   create_table "onboarding_stages", force: true do |t|
@@ -172,10 +172,12 @@ ActiveRecord::Schema.define(version: 20140130101503) do
     t.string  "max_availability"
     t.integer "num_partners"
     t.boolean "reservation_fee"
-    t.boolean "forms_sent"
     t.boolean "scheduling_email"
     t.integer "driver_application_id"
     t.string  "notes"
+    t.string  "payment_type"
+    t.boolean "applied_to_uber"
+    t.boolean "applied_to_lyft"
   end
 
   create_table "users", force: true do |t|

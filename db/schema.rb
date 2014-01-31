@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140130101503) do
+ActiveRecord::Schema.define(version: 20140131091036) do
 
   create_table "activation_stages", force: true do |t|
     t.boolean "car_received"
@@ -201,6 +201,7 @@ ActiveRecord::Schema.define(version: 20140130101503) do
     t.integer  "car_id"
     t.text     "default_car_schedule"
     t.text     "gender"
+    t.text     "partner_note"
   end
 
   add_index "users", ["car_id"], name: "car_id_idx"

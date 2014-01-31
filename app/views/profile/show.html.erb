@@ -50,9 +50,14 @@
   		</div>
   		<div class="col-md-4">
 			<ul id="notes">
-			    <li>
-			        <p>Drop off the car for Bob at the garage around the corner from his house. Passcode is 4321</p>
-			    </li>
+			  <li>
+          <% if @partner.nil? or @partner.partner_note.nil? %>
+            <h3>No partner note</h3>
+          <% else %>
+            <h3><%= @partner.first_name %>'s note:</h3>
+            <p><%= @partner.partner_note %></p>
+          <% end %>
+			 </li>
 			</ul>
   		</div>
   	</div>

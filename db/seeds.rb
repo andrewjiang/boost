@@ -30,6 +30,7 @@ if Rails.env == 'development'
     :address              => "123 Market St., San Francisco, CA",
     :password             => "password",
     :default_car_schedule => User::DAYNAMES.values_at(*[0, 2, 4, 5]),
+    :partner_note         => "Drop off the car for at Portsmouth Square Garage. Passcode is 4321",
     :car                  => car_1
   )
 
@@ -42,6 +43,7 @@ if Rails.env == 'development'
     :address              => "631 Folsom St., San Francisco, CA",
     :password             => "password",
     :default_car_schedule => User::DAYNAMES.values_at(*[1, 3, 6]),
+    :partner_note         => "Drop off the car at my driveway",
     :car                  => car_1
   )
 

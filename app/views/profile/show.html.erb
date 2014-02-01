@@ -52,9 +52,8 @@
 			<ul id="notes">
 			  <li>
           <% if @partner.nil? or @partner.partner_note.nil? %>
-            <h3>No partner note</h3>
+            <p>No note</p>
           <% else %>
-            <h3><%= @partner.first_name %>'s note:</h3>
             <p><%= @partner.partner_note %></p>
           <% end %>
 			 </li>

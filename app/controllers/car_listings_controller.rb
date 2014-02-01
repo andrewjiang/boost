@@ -7,7 +7,7 @@ class CarListingsController < ApplicationController
     @car_listing = CarListing.new(car_listing_params)
     if @car_listing.save
       CarListingMailer.confirmation_email(@car_listing).deliver
-      flash[:notice] = "Thanks for listing your car! A Zephyr car specialist will reach out if there is a match"
+      flash[:notice] = "Thanks for listing your car! A Boost car specialist will reach out if there is a match"
       redirect_to root_path
     else
       render 'new'

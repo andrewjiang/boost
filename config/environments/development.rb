@@ -22,7 +22,7 @@ Zephyr::Application.configure do
   config.action_mailer.smtp_settings = {
     address:              '127.0.0.1',
     port:                 1025,
-    domain:               'zephyrcar.com',
+    domain:               'boost.cr',
     user_name:            'foo',
     password:             'bar',
     authentication:       'plain',

@@ -1,5 +1,5 @@
 class DriverApplicationMailer < ActionMailer::Base
-  default from: 'support@zephyrcar.com'
+  default from: 'support@boost.cr'
 
   def confirmation_email(driver_application)
     @driver_application = driver_application

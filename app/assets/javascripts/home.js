@@ -1,3 +1,3 @@
 $(document).ready(function(){
-  $(".ephemeral").delay(2000).fadeOut(1000)
+  $(".ephemeral").delay(800).fadeOut(600)
 });

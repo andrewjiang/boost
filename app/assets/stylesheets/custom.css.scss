@@ -143,9 +143,9 @@
 		padding-left: 0px;
 	}
 	#header-CTA{
-		font-weight: bolder;
+		font-weight: 900;
 		font-size: 16px;
-		color: rgba(29, 147, 221, 0.8);
+		color: rgba(29, 147, 221, .9);
 	}
 	#header-CTA:hover{
 		color: rgba(29, 147, 221, 1);
@@ -278,10 +278,10 @@
 		padding: 120px 20px;
 	}
 	#landing-image{
-		background-image: image-url('car4.png');
+		background-image: image-url('bkg-girl-smiling.png');
 		background-repeat: no-repeat;
 		background-size: 100%;
-		background-position: 0px -150px;
+		background-position: 0px -50px;
 		min-height: 560px;
 		max-width: 2000px;
 		border-bottom: 1px solid #e5e5e5;
@@ -293,23 +293,23 @@
 		font-weight: 700;
 		font-size: 50px;
 		line-height: 56px;
-		text-shadow: rgba(0,0,0,0.75) 2px 2px 3px;
+		text-shadow: rgba(0,0,0,0.95) 1px 1px 7px;
 	}
 	.hero-type h3{
 		font-weight: 200;
 		line-height: 28px;
-		text-shadow: rgba(0,0,0,0.65) 1px 1px 1px;
+		text-shadow: rgba(0,0,0,1) 1px 1px 5px;
 		color: #ededed;
 	}
 	a.button-default {
-		background: -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(0,0,0,0.2)),color-stop(1,rgba(0,0,0,0.35)));
-		background: -webkit-linear-gradient(top,rgba(0,0,0,0.2) 0,rgba(0,0,0,0.35) 100%);
-		background: -moz-linear-gradient(top,rgba(0,0,0,0.2) 0,rgba(0,0,0,0.35) 100%);
-		background: -o-linear-gradient(top,rgba(0,0,0,0.2) 0,rgba(0,0,0,0.35) 100%);
-		background: -ms-linear-gradient(top,rgba(0,0,0,0.2) 0,rgba(0,0,0,0.35) 100%);
-		background: linear-gradient(top,rgba(0,0,0,0.2) 0,rgba(0,0,0,0.35) 100%);
-		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-		box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+		background: -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(0,0,0,0.3)),color-stop(1,rgba(0,0,0,0.5)));
+		background: -webkit-linear-gradient(top,rgba(0,0,0,0.3) 0,rgba(0,0,0,0.5) 100%);
+		background: -moz-linear-gradient(top,rgba(0,0,0,0.3) 0,rgba(0,0,0,0.5) 100%);
+		background: -o-linear-gradient(top,rgba(0,0,0,0.3) 0,rgba(0,0,0,0.5) 100%);
+		background: -ms-linear-gradient(top,rgba(0,0,0,0.3) 0,rgba(0,0,0,0.5) 100%);
+		background: linear-gradient(top,rgba(0,0,0,0.3) 0,rgba(0,0,0,0.5) 100%);
+		-webkit-box-shadow: 0 1px 7px rgba(0,0,0,0.3);
+		box-shadow: 0 1px 7px rgba(0,0,0,0.3);
 		-webkit-font-smoothing: subpixel-antialiased;
 		padding: 0px;
 	}
@@ -340,6 +340,9 @@
 		display: block;
 		margin-top: 20px;
 		margin-bottom: 20px;
+	}
+	#img-sfgate{
+		opacity: 0.7;
 	}
 	#sidecar{
 		height: 30px;
@@ -578,7 +581,7 @@
 	  height: 10px;
 	  left: 2%;
 	  border-radius: 100px / 5px;
-	  box-shadow:0 0 18px rgba(0,0,0,0.8);
+	  box-shadow:0 0 9px rgba(0,0,0,0.8);
 	}
 	.divider-inside-top-bottom:after {
 	  content: "";
@@ -589,7 +592,7 @@
 	  height: 5px;
 	  left: 2%;
 	  border-radius: 100px / 5px;
-	  box-shadow:0 0 12px rgba(0,0,0,0.8);
+	  box-shadow:0 0 6px rgba(0,0,0,0.8);
 	}
 	.divider-inside-top {
 	  position:relative;
@@ -722,10 +725,12 @@
 		left: 0;
 		right: 0;
 		margin: 0 auto;
-		width: 600px;
-		opacity: 40%;
+		width: 100%;
+		opacity: 0.8;
 		font-size: 16px;
 		font-weight: 600;
+		background-color: #fff;
+		border: none;
 		height: 60px;
 		text-align: center;
 	}

@@ -25,7 +25,7 @@ if Rails.env == 'development'
     :email                => "alice@example.com",
     :first_name           => "Alice",
     :last_name            => "Summers",
-    :phone_number         => "123-456-7891",
+    :phone_number         => "(555) 555-5555",
     :gender               => "f",
     :address              => "123 Market St., San Francisco, CA",
     :password             => "password",
@@ -38,12 +38,12 @@ if Rails.env == 'development'
     :email                => "bob@example.com",
     :first_name           => "Bob",
     :last_name            => "Marley",
-    :phone_number         => "912-1316-1232",
+    :phone_number         => "(925) 123-4567",
     :gender               => "m",
     :address              => "631 Folsom St., San Francisco, CA",
     :password             => "password",
     :default_car_schedule => User::DAYNAMES.values_at(*[1, 3, 6]),
-    :partner_note         => "Drop off the car at my driveway",
+    :partner_note         => "Drop off the car in my drive way at 631 Folsom St. It's the green house.",
     :car                  => car_1
   )
 

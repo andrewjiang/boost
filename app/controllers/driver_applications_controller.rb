@@ -8,14 +8,16 @@ class DriverApplicationsController < ApplicationController
     if @driver_application.save
       DriverApplicationMailer.confirmation_email(@driver_application).deliver
       DriverApplicationMailer.delay(run_at: 7.minutes.from_now).next_steps_email(@driver_application)
-      flash[:notice] = "You have successfully submitted your application! Our team will review your application and contact you shortly"
-      redirect_to root_path
+      redirect_to drive_submitted_path
     else
       render 'new'
     end
   end
 
   def destroy
+  end
+
+  def submitted
   end
 
   private
@@ -34,6 +36,7 @@ class DriverApplicationsController < ApplicationController
           :resume,
           :drivers_license,
           :referred_by,
+          :referral_code,
           :referral_email_0,
           :referral_email_1,
           :referral_email_2,

@@ -36,6 +36,7 @@ class DriverApplication < ActiveRecord::Base
   private
 
     def default_values
+      self.stage = 'Application'
       build_application_stage
       build_phone_screen_stage
       build_onboarding_stage

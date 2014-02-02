@@ -1,1 +1,5 @@
-$("#slot_idx_<%= idx %>").html("<%= escape_javascript render('toggleable_slot', car_slot: car_slot, idx: idx) %>");
+var r=confirm("Are you sure you want to change your reservation?");
+if (r==true)
+	{
+	$("#slot_idx_<%= idx %>").html("<%= escape_javascript render('toggleable_slot', car_slot: car_slot, idx: idx) %>");
+	}

@@ -49,6 +49,7 @@ class User < ActiveRecord::Base
   # Returns an array consisting of the first num_slots car slots for this user starting at the given start time
   def car_slots_ordered(start_time, num_slots)
     self.car_slots.where("start_time >= ? AND end_time <= ?", start_time, start_time.advance(:days => +num_slots)).order(:start_time)
+    # TODO: handle case where num slots returned != num slots requested (probably means we forgot to create enough car slots)
   end
 
   # Returns the user's driving partner

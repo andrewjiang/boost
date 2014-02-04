@@ -11,13 +11,14 @@ class CarSlot < ActiveRecord::Base
   # For now, just use static mapping of status to fees.
   # TODO: once we support special pricings (e.g. discounts or referral bonuses), we're gonna need to do something more sophisticated
   @@status_to_fee = { RESERVED => 50, CANCELLED => 20, UNASSIGNED => 0 }
+  @@days_before_locked = 2
 
-  # Returns a formatted time identifier for the car slot 
+  # Returns a formatted time identifier for the car slot
   def time_label
     self.start_time.to_formatted_s(:car_slot)
   end
 
-  # Returns the formatted fee 
+  # Returns the formatted fee
   def fee_label
     if self.fee == 0
       "$0"
@@ -28,7 +29,7 @@ class CarSlot < ActiveRecord::Base
 
   # Returns whether the slot is locked, which means it cannot be changed for charging purposes
   def locked?
-    self.start_time <= DateTime.current
+    DateTime.current + @@days_before_locked >= self.start_time
   end
 
   def toggle_status!

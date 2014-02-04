@@ -548,12 +548,13 @@
 		font-size: 16px;
 	}
 	.banner-sessions{
-		background-color: #777;
+		background-color: #999;
 		color: #fff;
 		border-bottom: 1px solid #e5e5e5;
 		line-height: 50px;
 		padding: 20px 0px 40px 0px;
 	}
+
 	#list-top-owners{
 		background-color: rgba(22, 160, 133,0.8);
 		color: #fff;
@@ -717,7 +718,8 @@
 		padding: 20px;
 	}
 	.sessions-form{
-		padding: 20px;
+		padding-top: 80px;
+		min-height: 400px;
 	}
 	.application-file{
 		padding-top: 10px;

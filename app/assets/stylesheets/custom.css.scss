@@ -953,6 +953,9 @@
 /* End User Profile CSS */
 
 /* Sticky Note CSS */
+	#notes {
+			list-style-type: none;
+	}
 	#notes li {
 	    position: relative;
 	    width: 100%;

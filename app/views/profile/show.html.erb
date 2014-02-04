@@ -51,10 +51,13 @@
   		<div class="col-md-4">
 			<ul id="notes">
 			  <li>
-          <% if @partner.nil? or @partner.partner_note.nil? %>
+          <% if @partner.nil? %>
             <p>No note</p>
           <% else %>
-            <p><%= @partner.partner_note %></p>
+            <p><u>CAR HANDOFF INSTRUCTIONS:</u></p>
+            <p><%= @partner.parking_instructions %></p>
+            <p>Leave the car there by: <strong><%= @partner.parking_timing %></strong></p>
+            <p>How to contact <%= @partner.first_name %>: <strong><%= @partner.how_to_contact %></strong></p>
           <% end %>
 			 </li>
 			</ul>

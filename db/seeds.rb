@@ -30,7 +30,9 @@ if Rails.env == 'development'
     :address              => "123 Market St., San Francisco, CA",
     :password             => "password",
     :default_car_schedule => User::DAYNAMES.values_at(*[0, 2, 4, 5]),
-    :partner_note         => "Drop off the car for at Portsmouth Square Garage. Passcode is 4321",
+    :parking_instructions => "Drop off the car for at Portsmouth Square Garage. Passcode is 4321",
+    :parking_timing       => "10:00 a.m.",
+    :how_to_contact       => "Text",
     :car                  => car_1
   )
 
@@ -43,7 +45,9 @@ if Rails.env == 'development'
     :address              => "631 Folsom St., San Francisco, CA",
     :password             => "password",
     :default_car_schedule => User::DAYNAMES.values_at(*[1, 3, 6]),
-    :partner_note         => "Drop off the car in my drive way at 631 Folsom St. It's the green house.",
+    :parking_instructions => "Drop off the car in my drive way at 631 Folsom St. It's the green house.",
+    :parking_timing       => "8:00 a.m.",
+    :how_to_contact       => "Call",
     :car                  => car_1
   )
 
@@ -68,6 +72,9 @@ if Rails.env == 'development'
     :address              => "400 Howard St., San Francisco, CA",
     :password             => "password",
     :default_car_schedule => User::DAYNAMES.values_at(*[1, 2, 3, 6]),
+    :parking_instructions => "Drop off the car near the intersection of 2nd and Folsom.",
+    :parking_timing       => "7:00 a.m.",
+    :how_to_contact       => "Call",
     :car                  => car_2
   )
 

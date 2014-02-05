@@ -14,14 +14,15 @@
               <span class="icon-bar"></span>
             </button>
           </div>
-          
+
           <!-- Collect the nav links, forms, and other content for toggling -->
+          <%= javascript_include_tag "dropdown_menu" %>
           <% if user_signed_in? %>
             <%= render 'layouts/navbar_signed_in' %>
           <% else %>
             <%= render 'layouts/navbar_signed_out' %>
           <% end %>
-          
+
           </div>
         </center>
       </div>

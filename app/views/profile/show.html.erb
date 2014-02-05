@@ -56,8 +56,10 @@
           <% else %>
             <p><u>CAR HANDOFF INSTRUCTIONS:</u></p>
             <p><%= @partner.parking_instructions %></p>
-            <p>Hand off the car by: <strong><%= @partner.parking_timing %></strong></p>
-            <p>How to contact <%= @partner.first_name %>: <strong><%= @partner.how_to_contact %></strong></p>
+            <p>Hand off the car by:</p>
+            <p><strong><%= @partner.parking_timing %></strong></p>
+            <p>How to contact <%= @partner.first_name %>:</p>
+            <p><strong><%= @partner.how_to_contact %></strong></p>
           <% end %>
 			 </li>
 			</ul>

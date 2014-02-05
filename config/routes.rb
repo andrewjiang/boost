@@ -8,11 +8,13 @@ Zephyr::Application.routes.draw do
   resources :car_slots,           only: [:update]
 
   root 'home#index'
-  match '/list',      to: 'car_listings#new',        via: 'get'
-  match '/drive',     to: 'driver_applications#new', via: 'get'
-  match '/dashboard', to: 'dashboard#show',          via: 'get'
-  match '/schedule',  to: 'schedule#show',           via: 'get'
-  match '/profile',   to: 'profile#show',            via: 'get'
+  match '/list',            to: 'car_listings#new',              via: 'get'
+  match '/list_submitted',  to: 'car_listings#submitted',        via: 'get'
+  match '/drive',           to: 'driver_applications#new',       via: 'get'
+  match '/drive_submitted', to: 'driver_applications#submitted', via: 'get'
+  match '/dashboard',       to: 'dashboard#show',                via: 'get'
+  match '/schedule',        to: 'schedule#show',                 via: 'get'
+  match '/profile',         to: 'profile#show',                  via: 'get'
 
   if Rails.env.development?
     mount MailPreview => 'mail_view'

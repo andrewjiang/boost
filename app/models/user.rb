@@ -15,17 +15,17 @@ class User < ActiveRecord::Base
 
   DAYNAMES = [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ]
 
-  WEEKDAY_FEES = { CarSlot::RESERVED => 50, CarSlot::CANCELLED => 20 }
-  WEEKEND_FEES = { CarSlot::RESERVED => 75, CarSlot::CANCELLED => 20 }
+  NORMAL_FEE  = { CarSlot::RESERVED => 50, CarSlot::CANCELLED => 20 }
+  PREMIUM_FEE = { CarSlot::RESERVED => 75, CarSlot::CANCELLED => 20 }
 
   DEFAULT_FEES = {
-    "Monday"    => WEEKDAY_FEES,
-    "Tuesday"   => WEEKDAY_FEES,
-    "Wednesday" => WEEKDAY_FEES,
-    "Thursday"  => WEEKDAY_FEES,
-    "Friday"    => WEEKDAY_FEES,
-    "Saturday"  => WEEKEND_FEES,
-    "Sunday"    => WEEKEND_FEES
+    "Monday"    => NORMAL_FEE,
+    "Tuesday"   => NORMAL_FEE,
+    "Wednesday" => NORMAL_FEE,
+    "Thursday"  => NORMAL_FEE,
+    "Friday"    => PREMIUM_FEE,
+    "Saturday"  => PREMIUM_FEE,
+    "Sunday"    => NORMAL_FEE
   }
 
   # Creates and saves car slots for the whole week that the given ref time falls under

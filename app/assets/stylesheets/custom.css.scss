@@ -1026,3 +1026,8 @@
 		}
 	}
 /* End Sticky Note CSS */
+
+/* Override Bootstrap style to address bug with mobile dropdowns */
+.dropdown-backdrop {
+    position: static;
+}

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   belongs_to :car
   has_many   :car_slots
 
+  before_save :format_phone_number
   before_create :set_default_car_slot_fees_if_absent
   # Map of day name to fee per status. e.g. { "Monday" => {"reserved" => 50, "cancelled" => 20}, ...  }
   serialize :default_car_slot_fees, JSON
@@ -67,6 +68,18 @@ class User < ActiveRecord::Base
   end
 
   private
+
+    # Phone number must contain 10 digits and will be formatted as (xxx) xxx-xxxx
+    def format_phone_number
+      if self.phone_number.nil?
+        return false
+      end
+      raw_numbers = self.phone_number.gsub(/\D/, '')
+      if raw_numbers.size != 10
+        return false
+      end
+      self.phone_number = "(#{raw_numbers[0..2]}) #{raw_numbers[3..5]}-#{raw_numbers[6..9]}"
+    end
 
     def set_default_car_slot_fees_if_absent
       if self.default_car_slot_fees.nil?

@@ -1,5 +1,5 @@
 class CarListingMailer < ActionMailer::Base
-  default from: 'support@boost.cr'
+  default from: 'support@zephyrcar.com'
 
   def confirmation_email(car_listing)
     @car_listing = car_listing

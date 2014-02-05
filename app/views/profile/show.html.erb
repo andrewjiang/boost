@@ -17,9 +17,9 @@
   				</div>
   				<div class="col-xs-7">
   					<h3>You: <br /> <span class="flatgreen"><%= current_user.full_name %> </span></h3>
-  					<h5>Drives <%= current_user.default_car_schedule.join(", ") %></h5>
-  					<h5><%= current_user.phone_number %></h5>
-  					<a href="mailto:<%= current_user.email %>"><h5><%= current_user.email %></h5></a>
+  					<h5>Drives: <%= current_user.default_car_schedule.join(", ") %></h5>
+  					<h5>Phone #: <%= current_user.phone_number %></h5>
+            <h5>Email: <a href="mailto:<%= current_user.email %>"><%= current_user.email %></a></h5>
   				</div>
   			</div>
   			<div class="row driver-info">
@@ -41,9 +41,9 @@
     				</div>
     				<div class="col-xs-7">
     					<h3>Partner: <br /> <span class="flatorange"><%= @partner.full_name %></span></h3>
-    					<h5>Drives <%= @partner.default_car_schedule.join(", ") %></h5>
-    					<h5><%= @partner.phone_number %></h5>
-    					<a href="mailto:<%= @partner.email %>"><h5><%= @partner.email %></h5></a>
+    					<h5>Drives: <%= @partner.default_car_schedule.join(", ") %></h5>
+    					<h5>Phone #: <%= @partner.phone_number %></h5>
+    					<h5>Email: <a href="mailto:<%= @partner.email %>"><%= @partner.email %></a></h5>
     				</div>
           <% end %>
   			</div>
@@ -56,7 +56,7 @@
           <% else %>
             <p><u>CAR HANDOFF INSTRUCTIONS:</u></p>
             <p><%= @partner.parking_instructions %></p>
-            <p>Leave the car there by: <strong><%= @partner.parking_timing %></strong></p>
+            <p>Hand off the car by: <strong><%= @partner.parking_timing %></strong></p>
             <p>How to contact <%= @partner.first_name %>: <strong><%= @partner.how_to_contact %></strong></p>
           <% end %>
 			 </li>

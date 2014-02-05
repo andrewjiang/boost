@@ -7,7 +7,7 @@ class CarSlot < ActiveRecord::Base
   CANCELLED  = "cancelled"  # The slot has been cancelled by the user
   UNASSIGNED = "unassigned" # The slot does not belong to the user
 
-  @@days_before_locked = 2
+  @@days_before_locked = 1
 
   # Returns a formatted time identifier for the car slot
   def time_label
@@ -36,7 +36,7 @@ class CarSlot < ActiveRecord::Base
 
   # Returns whether the slot is locked, which means it cannot be changed for charging purposes
   def locked?
-    DateTime.current + @@days_before_locked >= self.start_time
+    DateTime.current.advance(:days => +@@days_before_locked) >= self.start_time
   end
 
   def toggle_status!

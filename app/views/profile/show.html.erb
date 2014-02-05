@@ -6,16 +6,16 @@
   </div>
   <div class="container segment-bottom">
   	<div class="row">
-  		<div class="col-md-4 col-md-offset-2">
+  		<div class="col-md-5 col-md-offset-1">
   			<div class="row driver-info">
-  				<div class="col-xs-6">
+  				<div class="col-xs-5">
             <% if current_user.male? %>
   					  <%= link_to image_tag("profile-xy.png", class: "profile-pic"), profile_path %>
             <% else %>
               <%= link_to image_tag("profile-xx.png", class: "profile-pic"), profile_path %>
             <% end %>
   				</div>
-  				<div class="col-xs-6">
+  				<div class="col-xs-7">
   					<h3>You: <br /> <span class="flatgreen"><%= current_user.full_name %> </span></h3>
   					<h5>Drives <%= current_user.default_car_schedule.join(", ") %></h5>
   					<h5><%= current_user.phone_number %></h5>
@@ -24,22 +24,22 @@
   			</div>
   			<div class="row driver-info">
           <% if @partner.nil? %>
-            <div class="col-xs-6 no-partner">
+            <div class="col-xs-5 no-partner">
               <%= image_tag("profile-xy.png", class: "profile-pic") %>
             </div>
-            <div class="col-xs-6">
+            <div class="col-xs-7">
               <h3>No partner</h3>
               <h5>If you'd like to have a partner to take some of your driving days, let us know at <a href="mailto:support@zephyrcar.com" >support@zephyrcar.com</a></h5>
             </div>
           <% else %>
-    				<div class="col-xs-6">
+    				<div class="col-xs-5">
     					<% if @partner.male? %>
                 <%= link_to image_tag("profile-xy.png", class: "profile-pic"), profile_path %>
               <% else %>
                 <%= link_to image_tag("profile-xx.png", class: "profile-pic"), profile_path %>
               <% end %>
     				</div>
-    				<div class="col-xs-6">
+    				<div class="col-xs-7">
     					<h3>Partner: <br /> <span class="flatorange"><%= @partner.full_name %></span></h3>
     					<h5>Drives <%= @partner.default_car_schedule.join(", ") %></h5>
     					<h5><%= @partner.phone_number %></h5>
@@ -48,7 +48,7 @@
           <% end %>
   			</div>
   		</div>
-  		<div class="col-md-4">
+  		<div class="col-md-5">
 			<ul id="notes">
 			  <li>
           <% if @partner.nil? %>

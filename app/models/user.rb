@@ -55,6 +55,9 @@ class User < ActiveRecord::Base
 
   # Returns the user's driving partner
   def partner
+    if self.car.nil?
+      return nil
+    end
     partners = self.car.users - [self]
     partners.empty? ? nil : partners[0]
   end

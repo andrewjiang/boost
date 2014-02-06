@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+
+    <table>
+      <tr><th>Member</th><th>Fee for the day</th></tr>
+      <% @driver_slots_for_day.each do |user, car_slot| %>
+      <tr><td><%= user.full_name %></td><td><%= car_slot.fee %></td></tr>
+      <% end %>
+    </table>
+
+  </body>
+</html>

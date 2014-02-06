@@ -20,5 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 
 every 1.day, :at => '7:00 am' do
-  runner "FeeMailer.daily_fees_report_email.deliver", :environment => 'production'
+  runner "FeeMailer.daily_fees_report_email(['core@zephyrcar.com', 'support@zephyrcar.com']).deliver", :environment => 'production'
 end

@@ -128,8 +128,8 @@
 	#header-signin:hover, #signed-in-dropdown:hover{
 		color: #aaa;
 	}
-	#header-signin:focus {
-		background-color: none !important;
+	.open a#header-signin {
+		background-color: rgba(0,0,0,0);
 	}
 	#header-list-car{
 		color: #777;

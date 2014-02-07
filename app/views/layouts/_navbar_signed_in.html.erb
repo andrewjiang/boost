@@ -1,16 +1,16 @@
 <div class="collapse navbar-collapse" id="navbar-collapse">
   <ul class="nav navbar-nav">
     <li>
-      <%= link_to("Driving schedule", schedule_path, id: "header-CTA") %>
-    </li>
-    <li>
-      <a href="#" data-toggle="dropdown" id="signed-in-dropdown">
+      <a href="#" data-toggle="dropdown" id="signed-in-dropdown"><span id="user_email"><%= current_user.email %></span>
         <span class="glyphicon glyphicon-cog"></span>
         <b class="caret"></b>
       </a>
       
       <ul class="dropdown-menu signed-in pull-right" id="nav-dropdown" role="menu">
         <b id="arrow-up"></b>
+        <li>
+          <%= link_to("Driving schedule", schedule_path, id: "dropdown-schedule", class: "btn btn-default btn-block") %>
+        </li>
         <li>
           <%= link_to "Profile", profile_path, class: "btn btn-default btn-block" %>
         </li>

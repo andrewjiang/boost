@@ -37,12 +37,28 @@ ActiveAdmin.register Car do
       row :year
       row :vin
       row :license_number
-      row :assigned_members do
-        user_links = []
-        resource.users.each do |user|
-          user_links.push(link_to(user.full_name, admin_zephyr_member_path(user), :target => "_blank"))
+    end
+
+    panel 'Assigned Members' do
+      table_for(car.users) do
+        column "ID" do |resource|
+          link_to resource.id, admin_zephyr_member_path(resource), :class => "resource_id_link", :target => "_blank"
         end
-        user_links.join("<br />").html_safe
+        column do |resource|
+          link_to(I18n.t('active_admin.edit'), edit_admin_zephyr_member_path(resource), :class => "member_link edit_link", :target => "_blank")
+        end
+        column :name do |resource|
+          resource.full_name
+        end
+        column :default_car_schedule do |resource|
+          resource.default_car_schedule.join(', ')
+        end
+        column :email
+        column :phone_number
+        column :address
+        column :parking_instructions
+        column :parking_timing
+        column :how_to_contact
       end
     end
   end

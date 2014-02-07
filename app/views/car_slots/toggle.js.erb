@@ -1,5 +1,17 @@
-var r=confirm("Are you sure you want to change your reservation?");
-if (r==true)
-	{
-	$("#slot_idx_<%= idx %>").html("<%= escape_javascript render('toggleable_slot', car_slot: car_slot, idx: idx) %>");
-	}
+if ($("*:focus").hasClass("status-reserved")){
+	var r=confirm("Are you sure you want to cancel your reservation? You won't be able to drive that day.");
+	if (r==true)
+		{
+		$("#slot_idx_<%= idx %>").html("<%= escape_javascript render('toggleable_slot', car_slot: car_slot, idx: idx) %>");
+		var user = $('#user_email').html();
+	    mixpanel.track("CarSlot Change", {"User" : user, "Change": "Cancelled Slot"});
+		}
+} else {
+	var r=confirm("Are you sure you want to reserve that day?");
+	if (r==true)
+		{
+		$("#slot_idx_<%= idx %>").html("<%= escape_javascript render('toggleable_slot', car_slot: car_slot, idx: idx) %>");
+		var user = $('#user_email').html();
+	    mixpanel.track("CarSlot Change", {"User" : user, "Change": "Reserved Slot"});
+		}
+}

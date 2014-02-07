@@ -1,3 +1,5 @@
+require 'set'
+
 class User < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -5,7 +7,7 @@ class User < ActiveRecord::Base
   belongs_to :car
   has_many   :car_slots
 
-  before_save :format_phone_number
+  before_save :format_phone_number, :check_default_car_schedule
   before_create :set_default_car_slot_fees_if_absent
   # Map of day name to fee per status. e.g. { "Monday" => {"reserved" => 50, "cancelled" => 20}, ...  }
   serialize :default_car_slot_fees, JSON
@@ -88,5 +90,15 @@ class User < ActiveRecord::Base
       if self.default_car_slot_fees.nil?
         self.default_car_slot_fees = DEFAULT_FEES
       end
+    end
+
+    # Makes sure each day in the new schedule is valid
+    def check_default_car_schedule
+      new_default_car_schedule = Set.new(self.default_car_schedule)
+      new_default_car_schedule_checked = []
+      DAYNAMES.each do |dayname|
+        new_default_car_schedule_checked.push dayname unless !new_default_car_schedule.include?(dayname)
+      end
+      self.default_car_schedule = new_default_car_schedule_checked
     end
 end

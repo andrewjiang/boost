@@ -45,9 +45,9 @@ class CarSlot < ActiveRecord::Base
     self
   end
 
-  def self.driver_slots_for_day(ref_time_slot=DateTime.current)
+  def self.driver_slots_for_day(ref_datetime=DateTime.current)
     fee_per_driver = Hash.new
-    CarSlot.where(start_time: ref_time_slot.beginning_of_day).each do |c|
+    CarSlot.where(start_time: ref_datetime.beginning_of_day).each do |c|
       fee_per_driver[c.user] = c
     end
     fee_per_driver

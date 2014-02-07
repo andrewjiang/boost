@@ -2,10 +2,12 @@
   <div class="col-md-1 status-<%= car_slot.status %>">
     <%= car_slot.time_label %>
     <p> <%= car_slot.fee_label %> </p>
+    <div class="swap"><span class="glyphicon glyphicon-random">&nbsp;</span></div>
   </div>
 <% else %>
   <button class="col-md-1 status-<%= car_slot.status %>" type="submit">
     <%= car_slot.time_label %>
     <p> <%= car_slot.fee_label %> </p>
+    <div class="swap"><span class="glyphicon glyphicon-random">&nbsp;</span></div>
   </button>
 <% end %>

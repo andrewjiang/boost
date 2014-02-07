@@ -866,6 +866,16 @@
 	.car-slot-locked {
 		opacity: 0.5;
 	}
+	.swap{
+		position: absolute;
+		right: -4px;
+		bottom: 2px;
+		opacity: 0.6;
+		font-size: 14px;
+	}
+	.swap:hover{
+		opacity: 1;
+	}
 	#thisweek .col-md-1.status-reserved, #nextweek .col-md-1.status-reserved {
 		border: 1px solid #27ae60;
 		background-color: #D4EFDF;

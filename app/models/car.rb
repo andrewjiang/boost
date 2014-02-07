@@ -2,6 +2,11 @@ class Car < ActiveRecord::Base
   has_many :users
   accepts_nested_attributes_for :users # needed for formtastic, used by active admin
 
+  # Name, including the VIN
+  def display_name
+    "#{self.year} #{self.make} #{self.model}" + (self.color.blank? ? "" : ", #{self.color} (#{self.vin})")
+  end
+
   def name
     "#{self.year} #{self.make} #{self.model}" + (self.color.blank? ? "" : ", #{self.color}")
   end

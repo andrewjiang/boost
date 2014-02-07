@@ -29,7 +29,7 @@ ActiveAdmin.register User, :as => 'Zephyr Member' do
       if resource.car.nil?
         'None'
       else
-        link_to(resource.car.name, admin_car_path(resource.car), :target => "_blank")
+        link_to(resource.car.display_name, admin_car_path(resource.car), :target => "_blank")
       end
     end
     column :default_car_schedule do |resource|
@@ -51,7 +51,7 @@ ActiveAdmin.register User, :as => 'Zephyr Member' do
         if user.car.nil?
           'None'
         else
-          link_to(user.car.name, admin_car_path(resource.car), :target => "_blank")
+          link_to(user.car.display_name, admin_car_path(resource.car), :target => "_blank")
         end
       end
       row :default_car_schedule do

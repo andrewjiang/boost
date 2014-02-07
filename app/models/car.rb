@@ -4,7 +4,7 @@ class Car < ActiveRecord::Base
 
   # Name, including the VIN
   def display_name
-    "#{self.year} #{self.make} #{self.model}" + (self.color.blank? ? "" : ", #{self.color} (#{self.vin})")
+    "#{self.year} #{self.make} #{self.model}" + (self.color.blank? ? "" : ", #{self.color}") + " (#{self.vin})"
   end
 
   def name

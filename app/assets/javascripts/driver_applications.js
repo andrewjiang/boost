@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('form').submit(function(){
+  $('form.new_driver_application').submit(function(){
     var referredBy = $('#select_referred_by').val();
     mixpanel.track("DriverApp Submit Pressed", {"Referred By" : referredBy});
   })

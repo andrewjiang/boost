@@ -13,6 +13,5 @@ if ($("*:focus").hasClass("status-reserved")){
 		$("#slot_idx_<%= idx %>").html("<%= escape_javascript render('toggleable_slot', car_slot: car_slot, idx: idx) %>");
 		var user = $('#user_email').html();
 	    mixpanel.track("CarSlot Change", {"User": user, "Change": "Reserved Slot"});
-	    alert("Nat");
 		}
 }

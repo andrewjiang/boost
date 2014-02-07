@@ -4,7 +4,7 @@ if ($("*:focus").hasClass("status-reserved")){
 		{
 		$("#slot_idx_<%= idx %>").html("<%= escape_javascript render('toggleable_slot', car_slot: car_slot, idx: idx) %>");
 		var user = $('#user_email').html();
-	    mixpanel.track("CarSlot Change", {"User" : user, "Change": "Cancelled Slot"});
+	    mixpanel.track("CarSlot Change", {"User": user, "Change": "Cancelled Slot"});
 		}
 } else {
 	var r=confirm("Are you sure you want to reserve that day?");
@@ -12,6 +12,7 @@ if ($("*:focus").hasClass("status-reserved")){
 		{
 		$("#slot_idx_<%= idx %>").html("<%= escape_javascript render('toggleable_slot', car_slot: car_slot, idx: idx) %>");
 		var user = $('#user_email').html();
-	    mixpanel.track("CarSlot Change", {"User" : user, "Change": "Reserved Slot"});
+	    mixpanel.track("CarSlot Change", {"User": user, "Change": "Reserved Slot"});
+	    alert("Nat");
 		}
 }

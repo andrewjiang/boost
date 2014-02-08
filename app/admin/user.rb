@@ -16,7 +16,7 @@ ActiveAdmin.register User, :as => 'Zephyr Member' do
 
   index do
     selectable_column
-    column "ID" do |resource|
+    column "Member ID" do |resource|
       link_to resource.id, resource_path(resource), :class => "resource_id_link", :target => "_blank"
     end
     column do |resource|
@@ -24,6 +24,13 @@ ActiveAdmin.register User, :as => 'Zephyr Member' do
     end
     column :name do |resource|
       resource.full_name
+    end
+    column 'Assigned car ID' do |resource|
+      if resource.car.nil?
+        'None'
+      else
+        link_to(resource.car.id, admin_car_path(resource.car), :target => "_blank")
+      end
     end
     column 'Assigned car' do |resource|
       if resource.car.nil?
@@ -45,8 +52,18 @@ ActiveAdmin.register User, :as => 'Zephyr Member' do
 
   show do |user|
     attributes_table do
+      row 'Member ID' do
+        user.id
+      end
       row :first_name
       row :last_name
+      row 'Assigned car ID' do
+        if user.car.nil?
+          'None'
+        else
+          link_to(user.car.id, admin_car_path(resource.car), :target => "_blank")
+        end
+      end
       row 'Assigned car' do
         if user.car.nil?
           'None'

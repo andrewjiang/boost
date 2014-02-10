@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <title>Boost | Your Your smart GPS assistant </title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	  <link href='http://fonts.googleapis.com/css?family=Allan:700' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie&amp;subset=latin' rel='stylesheet' type='text/css'>
+
+	  <script type="text/javascript">
+	    (function(c,a){window.mixpanel=a;var b,d,h,e;b=c.createElement("script");
+	    b.type="text/javascript";b.async=!0;b.src=("https:"===c.location.protocol?"https:":"http:")+
+	    '//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';d=c.getElementsByTagName("script")[0];
+	    d.parentNode.insertBefore(b,d);a._i=[];a.init=function(b,c,f){function d(a,b){
+	    var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(
+	    Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof f?g=a[f]=[]:
+	    f="mixpanel";g.people=g.people||[];h=['disable','track','track_pageview','track_links',
+	    'track_forms','register','register_once','unregister','identify','alias','name_tag','set_config',
+	    'people.set','people.set_once','people.increment','people.track_charge','people.append'];
+	    for(e=0;e<h.length;e++)d(g,h[e]);a._i.push([b,c,f])};a.__SV=1.2;})(document,window.mixpanel||[]);
+	    mixpanel.init("ec6a353b00dcc25b5b418fdbbf4d6a94");
+	  </script>
+
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %> 
+    <%= render 'layouts/shim' %>
+
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+		  <div class="container">
+		    <div class="row">
+		      <div class="col-sm-4 col-sm-offset-4 col-xs-12" id="logo">
+		        <center><%= link_to image_tag("BoostLogo.png"), root_path, id: "logo" %></center>
+		      </div>
+		      <div class="col-sm-4 col-xs-12" id="header-right">
+		        <center>
+		          <div class="navbar-header">
+		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+		              <span class="sr-only">Toggle navigation</span>
+		              <span class="icon-bar"></span>
+		              <span class="icon-bar"></span>
+		              <span class="icon-bar"></span>
+		            </button>
+		          </div>
+
+		          <!-- Collect the nav links, forms, and other content for toggling -->
+		          <%= javascript_include_tag "dropdown_menu" %>
+		          <% if user_signed_in? %>
+		            <%= render 'layouts/navbar_signed_in' %>
+		          <% else %>
+		            <%= render 'layouts/navbar_signed_out' %>
+		          <% end %>
+
+		          </div>
+		        </center>
+		      </div>
+		    </div>
+		  </div>
+		</nav>
+		<div style="width:100%;">
+		<% flash.each do |key, value| %>
+		  <% if key == :notice %>
+		    <div class="alert alert-success ephemeral"><%= value %></div>
+		  <% else %>
+		    <div class="alert alert-danger ephemeral"><%= value %></div>
+		  <% end %>
+		<% end %>
+		</div>
+
+		<script type="text/javascript">
+		    mixpanel.track("Landing Page Loaded")
+		</script>
+		<div class="container-fluid divider-inside-top-bottom">
+		  <div class="mask-container">
+		    <div id="opacity-mask">
+		    </div>
+		    <div id="landing-image">
+		      <div class="container">
+		        <div class="row">
+		          <div class="col-md-5" id="landing-hero">
+		            <span class="hero-type">Save money driving for ridesharing companies </span>
+		            <span class="hero-type"><h3>Get a Boost GPS device installed in your car and save up to <strong>$200 per week</strong> driving for Uber, Lyft, and Sidecar</h3></span>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="container-fluid">
+		  <div id="featured-in">
+		    <div class="container">
+		      <div class="row" id="featured-in-row">
+		        <div class="col-md-2 col-md-offset-3">
+		          <center><%= link_to image_tag("uber.png", id: "uber"), 'http://www.uber.com' %></center>
+		        </div>
+		        <div class="col-md-2">
+		          <center><%= link_to image_tag("lyft.png", id: "lyft"), 'http://www.lyft.com' %></center>
+		        </div>
+		        <div class="col-md-2">
+		          <center><%= link_to image_tag("Sidecar_logo.png", id: "sidecar"), 'http://www.side.cr' %></center>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="container-fluid">
+		  <div id="key-features">
+		    <div class="container">
+		      <div class="row">
+		        <div class="col-md-12">
+		          <center><h1>Key features</h1></center>
+		        </div>
+		        <div class="col-md-4">
+		          <div class="row">
+		            <div class="col-md-12 key-feature-box">
+		              <h4>$200 Installation fee</h4>
+		              <p>A simple one-time fee which covers installation of our custom GPS tracking device into your car.</p>
+		            </div>
+		            <div class="col-md-12 key-feature-box">
+		              <h4>Smart Driving Recommendations</h4>
+		              <p>Our proprietary algorithms will recommend cost-saving driving tips, such as highlighting optimal routes to take during certain times of the day.</p>
+		            </div>
+		            <div class="col-md-12 key-feature-box">
+		              <h4>Easy-to-use Analytics Dashboard</h4>
+		              <p>Our web application boasts a real-time dashboard that will help visualize your driving habits.</p>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="col-md-8" id="drive-for">
+		          <center><%= image_tag("priuswhite.png", id: "prius") %></center>
+		        </div>
+		        <div class="col-md-12">
+		          <center><h1>Interested? Shoot us an email at <a href="mailto:support@boost.cr" >support@boost.cr</a></h1></center>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+		<footer class="footer divider-inside-top">
+		  <div class="container" id="footer">
+		    <div class="row">
+		      <div class="col-md-6" id="footerLeft">
+		      	© 2013 Boost - Your smart GPS assistant
+		      </div>
+		      <div class="col-md-6" id="footerRight">
+		        Contact Us &nbsp;&nbsp; | &nbsp;&nbsp;<a href="mailto:support@boost.cr" >support@boost.cr</a>
+		      </div>
+		    </div>
+		  </div>
+		  <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-46434116-1', 'zephyrcar.com');
+		  ga('send', 'pageview');
+
+		</script>
+		</footer>
+
+	</body>
+</html>

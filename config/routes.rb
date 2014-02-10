@@ -8,6 +8,7 @@ Zephyr::Application.routes.draw do
   resources :car_slots,           only: [:update]
 
   root 'home#index'
+  match '/welcome',         to: 'dashboard#welcome',             via: 'get'
   match '/list',            to: 'car_listings#new',              via: 'get'
   match '/list_submitted',  to: 'car_listings#submitted',        via: 'get'
   match '/drive',           to: 'driver_applications#new',       via: 'get'

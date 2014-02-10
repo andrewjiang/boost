@@ -1,6 +1,11 @@
 class DashboardController < ApplicationController
     include ApplicationHelper
-  before_action :require_signed_in
+
+  def welcome
+    if user_signed_in?
+      redirect_to schedule_path
+    end
+  end
 
   def show
 
